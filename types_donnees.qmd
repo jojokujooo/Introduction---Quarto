@@ -369,6 +369,101 @@ print(indice)
 - **Stockage d'Informations Structurées** : Parfait pour stocker des informations complexes comme des données utilisateur.
 - **Recherche Rapide** : Utilisez des dictionnaires pour des recherches rapides basées sur des clés uniques
 
+<p id=textIntro>Il existe des méthodes liées aux variables de type dictionnaire pour les manier :</p>
+
+| Méthode                | Description                                                                                   |
+|------------------------|-----------------------------------------------------------------------------------------------|
+| **`dict.keys()`**      | Retourne une vue sur les clés du dictionnaire.                                               |
+| **`dict.values()`**    | Retourne une vue sur les valeurs du dictionnaire.                                            |
+| **`dict.items()`**     | Retourne une vue sur les paires (clé, valeur) du dictionnaire.                               |
+| **`dict.get(key)`**    | Retourne la valeur associée à la clé spécifiée.                                               |
+|                        | Si la clé n'existe pas, retourne `None` ou une valeur par défaut spécifiée en argument.       |
+| **`dict.pop(key)`**    | Retourne la valeur associée à la clé spécifiée et supprime cette paire du dictionnaire.
+|                        | Si la clé n'existe pas, retourne une valeur par défaut spécifiée en argument ou lève une erreur.                                                                             |
+| **`dict.popitem()`**  | Retourne et supprime une paire (clé, valeur) arbitraire du dictionnaire.                     |
+| **`dict.update(other_dict)`** | Met à jour le dictionnaire avec les paires clé-valeur du dictionnaire spécifié en argument. |
+| **`dict.clear()`**     | Supprime toutes les paires clé-valeur du dictionnaire, le laissant vide.                      |
+
+```{python}
+# Création d'un dictionnaire
+individu = {"nom": "Alice", "age": 30}
+autre_dictionnaire = dict(nom="Bob", age=25)
+individu
+
+# Ajout et mise à jour
+individu["profession"] = "Développeur"
+individu
+
+# Mise à jour de plusieurs clés
+individu.update([('nom', "Romain"), ('profession', "Data Scientist")])
+individu
+
+# Utilisation de keys()
+cles = individu.keys()
+print("Clés:", cles)
+
+# Utilisation de values()
+valeurs = individu.values()
+print("Valeurs:", valeurs)
+
+# Utilisation de items()
+paires = individu.items()
+print("Paires clé-valeur:", paires)
+
+# Utilisation de get()
+nom_personne = individu.get("nom")
+age_personne = individu.get("age")
+print(nom_personne, age_personne)
+
+# Récupération de la valeur de la clé "ville"
+ville = individu.get("ville")
+ville
+
+# Récupération de la valeur de la clé "ville" avec une valeur par défaut
+ville = individu.get("ville", "Non spécifiée")
+print("Ville:", ville)
+
+# Parcours des clés
+print("\nParcours des clés:")
+for cle in individu.keys():
+    print(cle)
+
+# Parcours des valeurs
+print("\nParcours des valeurs:")
+for valeur in individu.values():
+    print(valeur)
+
+# Parcours des paires clé-valeur
+print("\nParcours des paires clé-valeur:")
+for cle, valeur in individu.items():
+    print(cle, ":", valeur)
+
+# Parcours des paires clé-valeur avec enumerate
+print("\nParcours des paires clé-valeur avec enumerate:")
+for index, (cle, valeur) in enumerate(individu.items()):
+    print(f"Index {index}: Clé = {cle}, Valeur = {valeur}")
+
+# Suppression d'une clé et de sa valeur
+del individu["age"]
+print(individu)
+
+# Suppression d'une clé avec retour de sa valeur
+profession = individu.pop("profession")
+print(profession)
+
+# Suppression d'une clé avec retour de sa valeur et gestion de l'absence de la clé
+ville_supprimee = individu.pop("ville", "Non spécifiée")
+print(ville_supprimee)
+
+# Affichage du dictionnaire après les suppressions
+print(individu)
+
+
+```
+
+
+
+
 
 
 
