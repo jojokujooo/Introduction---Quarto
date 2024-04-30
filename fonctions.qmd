@@ -6,4 +6,26 @@ title: Les Fonctions
 
 #### Qu'est ce qu'une fonction ?
 
-<p id=textIntro>Une **fonction** en programmation est essentiellement une série d'instructions regroupées sous un nom spécifique. Elle agit comme une petite "machine" qui peut recevoir des entrées, appelées **paramètres**, traiter ces données selon un ensemble d'instructions définies à l'intérieur de la fonction, et éventuellement produire un résultat, appelé **valeur de retour**.</p>
+<p id=textIntro>Une **fonction** en programmation est essentiellement une série d'instructions regroupées sous un nom spécifique. Elle agit comme une petite "machine" qui peut recevoir des **entrées**, appelées **paramètres**, traiter ces données selon un ensemble d'instructions définies à l'intérieur de la fonction, et éventuellement produire un **résultat**, appelé **valeur de retour**.</p>
+
+#### Une fonction en Python
+<p id=textIntro>Une fonction est définie en utilisant le mot-clé `def`, suivi du nom de la fonction, des parenthèses () contenant des paramètres (si nécessaires), et
+un bloc d'instructions indenté.</p>
+
+```{python}
+def nom_de_la_fonction(parametres):
+    # instructions
+```
+
+#### L'importance des fonctions
+<p id=textIntro>Les fonctions jouent un rôle crucial dans la réduction de la redondance du code. Plutôt que de répéter le même code à plusieurs endroits, les fonctions nous permettent de regrouper ce code et de l'appeler selon les besoins. Cette approche rend le code plus concis, plus clair et plus simple à maintenir.</p>
+
+#### Pourquoi utiliser les fonctions ?
+<p id=textIntro>Les fonctions offrent plusieurs avantages essentiels : 
+<ul>
+<li>**Simplification du code** : En encapsulant des tâches complexes dans des fonctions, on simplifie le code principal, le rendant plus **lisible** et plus **compréhensible**.</li>
+<li>**Réutilisabilité** : Une fois une fonction définie, elle peut être utilisée **autant de fois que nécessaire** sans avoir à réécrire le même code, ce qui **économise du temps** et **réduit les risques d'erreurs.**</li>
+<li>**Meilleure organisation du code** : Les fonctions contribuent à **structurer le code** en unités logiques. Chaque fonction a un objectif spécifique, ce qui facilite la compréhension du programme dans son ensemble. De plus, cela **simplifie le débogage** et le **test de parties spécifiques** du code.</li>
+</ul>
+
+</p>
