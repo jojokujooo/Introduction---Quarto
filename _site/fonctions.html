@@ -205,7 +205,7 @@ Une <strong>fonction</strong> en programmation est essentiellement une série d�
 <p id="textIntro">
 Une fonction est définie en utilisant le mot-clé <code>def</code>, suivi du nom de la fonction, des parenthèses () contenant des paramètres (si nécessaires), et un bloc d’instructions indenté.
 </p>
-<div id="809c16d7" class="cell" data-execution_count="1">
+<div id="dd261d8e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nom_de_la_fonction(parametres):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># instructions</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeur_de_retour</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -239,7 +239,7 @@ Les fonctions offrent plusieurs avantages essentiels :
 </li>
 </ul>
 <p></p>
-<div id="a5689d88" class="cell" data-execution_count="2">
+<div id="bdfdcc7c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> maFonction():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"C'est MA fonction"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -252,7 +252,7 @@ Dans cet exemple <code>maFonction</code> est le nom de notre fonction, elle ne p
 <p id="textIntro">
 Une fois la fonction définie, celle-ci peut être appelée en utilisant son nom suivi de parenthèses. Quand elle est appelée, les instructions qui la composent sont executés :
 </p>
-<div id="c177a154" class="cell" data-execution_count="3">
+<div id="9673ba50" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>maFonction()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>C'est MA fonction</code></pre>
@@ -264,7 +264,7 @@ Une fois la fonction définie, celle-ci peut être appelée en utilisant son nom
 <p id="textIntro">
 Les fonctions peuvent être plus flexibles lorsqu’elles prennent des paramètres. Les paramètres agissent comme des variables dans la définition de la fonction.
 </p>
-<div id="41c96a35" class="cell" data-execution_count="4">
+<div id="d9bda486" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> maFonctionAvecParam(param1, param2):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(param1)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(param2)</span>
@@ -278,8 +278,82 @@ Les fonctions peuvent être plus flexibles lorsqu’elles prennent des paramètr
 </div>
 </div>
 <p id="textIntro">
-Dans l’exemple ci-dessus <code>prenom</code> est le <strong>paramètre</strong> de notre fonction <code>bonjour</code>. <strong>Quand la fonction est appelée</strong>, elle prend un <strong>argument</strong>, qui est une valeur qui est passée à la fonction lors de son appel. Ici, notre <strong>argument</strong> est <code>"Pierre"</code>.
-</p>
+</p><p>Dans l’exemple ci-dessus <code>prenom</code> est le <strong>paramètre</strong> de notre fonction <code>bonjour</code>. <strong>Quand la fonction est appelée</strong>, elle prend un <strong>argument</strong>, qui est une valeur qui est passée à la fonction lors de son appel. Ici, notre <strong>argument</strong> est <code>"Pierre"</code>. Dans cet appel, <code>"Pierre"</code> est un argument qui est passé à la fonction <code>bonjour</code> . La fonction utilisera la valeur de cet argument lors de son exécution.</p>
+Voici quelques exemples :
+<p></p>
+<div id="78886748" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition de la fonction pour afficher un message</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> affiche_message(message):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Message reçu : </span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Appel de la fonction avec différents messages</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>affiche_message(<span class="st">"Bonjour, comment ça va ?"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>affiche_message(<span class="st">"Python, c'est génial !"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition de la fonction pour additionner deux nombres</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> additionner(a, b):</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    somme <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"La somme de </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> et </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> est </span><span class="sc">{</span>somme<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Appel de la fonction avec différents arguments</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>additionner(a<span class="op">=</span><span class="dv">5</span>, b<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>additionner(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>additionner(b<span class="op">=</span><span class="dv">10</span>, a<span class="op">=</span><span class="dv">67</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition de la fonction pour diviser deux nombres</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> division(a, b):</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>    quotient <span class="op">=</span> a <span class="op">/</span> b</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Le quotient de </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> et </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> est </span><span class="sc">{</span>quotient<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Appel de la fonction avec différents arguments</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>division(a<span class="op">=</span><span class="dv">5</span>, b<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>division(b<span class="op">=</span><span class="dv">3</span>, a<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>division(<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>division(<span class="dv">5</span>, <span class="dv">3</span>)</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition de la fonction pour calculer la puissance d'un nombre</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> puissance(base, exposant):</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    resultat <span class="op">=</span> base <span class="op">**</span> exposant</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>base<span class="sc">}</span><span class="ss"> élevé à la puissance </span><span class="sc">{</span>exposant<span class="sc">}</span><span class="ss"> est égal à </span><span class="sc">{</span>resultat<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Appel de la fonction avec différents arguments</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>puissance(exposant<span class="op">=</span><span class="dv">2</span>, base<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Import de la bibliothèque math pour utiliser pi</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition de la fonction pour calculer le périmètre d'un cercle</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> perimetre_cercle(rayon):</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>    perimetre <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> math.pi <span class="op">*</span> rayon</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Le périmètre d'un cercle de rayon </span><span class="sc">{</span>rayon<span class="sc">}</span><span class="ss"> est </span><span class="sc">{</span>perimetre<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Appel de la fonction avec différents rayons</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>perimetre_cercle(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Message reçu : Bonjour, comment ça va ?
+Message reçu : Python, c'est génial !
+La somme de 5 et 3 est 8
+La somme de 5 et 3 est 8
+La somme de 67 et 10 est 77
+Le quotient de 5 et 3 est 1.6666666666666667
+Le quotient de 5 et 3 est 1.6666666666666667
+Le quotient de 3 et 5 est 0.6
+Le quotient de 5 et 3 est 1.6666666666666667
+3 élevé à la puissance 2 est égal à 9
+Le périmètre d'un cercle de rayon 5 est 31.42</code></pre>
+</div>
+</div>
+</section>
+<section id="différence-entre-paramètres-et-arguments" class="level4">
+<h4 class="anchored" data-anchor-id="différence-entre-paramètres-et-arguments">Différence entre Paramètres et Arguments</h4>
+<ul>
+<li>
+<strong>Paramètres</strong> : Ce sont les noms des variables définis dans la déclaration de la fonction. Ces <strong>paramètres</strong> servent de <strong>réceptacles</strong> pour les valeurs qui seront passées à la fonction <strong>lors de son appel</strong>. Ils définissent les données que la fonction <strong>s’attend à recevoir</strong> pour effectuer ses opérations.
+</li>
+<li>
+<strong>Arguments</strong> : Ce sont les <strong>valeurs réelles</strong> fournies à la fonction <strong>lors de son appel</strong>. Ces valeurs correspondent aux paramètres définis dans la fonction. Lorsque la fonction est appelée, les <strong>arguments sont assignés aux paramètres</strong> correspondants selon leur position ou leur nom, et <strong>la fonction les utilise</strong> pour effectuer ses calculs ou exécuter ses instructions.
+</li>
+</ul>
 
 
 </section>
@@ -367,7 +441,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/jojokujooo\.github\.io\/Les-Fondamentaux-de-Python\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

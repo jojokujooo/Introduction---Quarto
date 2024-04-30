@@ -59,5 +59,67 @@ def bonjour(prenom):
 bonjour("Pierre")
 ```
 
-<p id=textIntro>Dans l'exemple ci-dessus `prenom` est le **paramètre** de notre fonction `bonjour`. **Quand la fonction est appelée**, elle prend un **argument**, qui est une valeur qui est passée à la fonction lors de son appel. Ici, notre **argument** est `"Pierre"`.</p>
+<p id=textIntro>Dans l'exemple ci-dessus `prenom` est le **paramètre** de notre fonction `bonjour`. **Quand la fonction est appelée**, elle prend un **argument**, qui est une valeur qui est passée à la fonction lors de son appel. Ici, notre **argument** est `"Pierre"`.
+Dans cet appel, `"Pierre"` est un argument qui est passé à la fonction `bonjour` . La fonction utilisera la valeur de cet argument lors de son exécution.
 
+Voici quelques exemples :
+</p>
+
+```{python}
+# Définition de la fonction pour afficher un message
+def affiche_message(message):
+    print(f"Message reçu : {message}")
+
+# Appel de la fonction avec différents messages
+affiche_message("Bonjour, comment ça va ?")
+affiche_message("Python, c'est génial !")
+
+# Définition de la fonction pour additionner deux nombres
+def additionner(a, b):
+    somme = a + b
+    print(f"La somme de {a} et {b} est {somme}")
+
+# Appel de la fonction avec différents arguments
+additionner(a=5, b=3)
+additionner(5, 3)
+additionner(b=10, a=67)
+
+# Définition de la fonction pour diviser deux nombres
+def division(a, b):
+    quotient = a / b
+    print(f"Le quotient de {a} et {b} est {quotient}")
+
+# Appel de la fonction avec différents arguments
+division(a=5, b=3)
+division(b=3, a=5)
+division(3, 5)
+division(5, 3)
+
+# Définition de la fonction pour calculer la puissance d'un nombre
+def puissance(base, exposant):
+    resultat = base ** exposant
+    print(f"{base} élevé à la puissance {exposant} est égal à {resultat}")
+
+# Appel de la fonction avec différents arguments
+puissance(exposant=2, base=3)
+
+# Import de la bibliothèque math pour utiliser pi
+import math
+
+# Définition de la fonction pour calculer le périmètre d'un cercle
+def perimetre_cercle(rayon):
+    perimetre = 2 * math.pi * rayon
+    print(f"Le périmètre d'un cercle de rayon {rayon} est {perimetre:.2f}")
+
+# Appel de la fonction avec différents rayons
+perimetre_cercle(5)
+
+```
+
+#### Différence entre Paramètres et Arguments 
+
+<ul>
+<li>**Paramètres** : Ce sont les noms des variables définis dans la déclaration de la fonction. Ces **paramètres** servent de **réceptacles** pour les valeurs qui seront passées à la fonction **lors de son appel**. Ils définissent les données que la fonction **s'attend à recevoir** pour effectuer ses opérations.</li>
+
+<li>**Arguments** : Ce sont les **valeurs réelles** fournies à la fonction **lors de son appel**. Ces valeurs correspondent aux paramètres définis dans la fonction. Lorsque la fonction est appelée, les **arguments sont assignés aux paramètres** correspondants selon leur position ou leur nom, et **la fonction les utilise** pour effectuer ses calculs ou exécuter ses instructions.</li>
+</ul>
