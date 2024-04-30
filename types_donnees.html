@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Python Pour Les Nuls - Types de données</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Python Pour Les Nuls</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Accueil</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./var_ope.html"> 
+<span class="menu-text">Variables et Opérations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./comm_affiche.html"> 
+<span class="menu-text">Commentaires et Affichage</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./struct_controle.html"> 
+<span class="menu-text">Structures de contrôle</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./types_donnees.html" aria-current="page"> 
+<span class="menu-text">Types de données</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./fonctions.html"> 
+<span class="menu-text">Les Fonctions</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#types-de-données-structures-séquentielles" id="toc-types-de-données-structures-séquentielles" class="nav-link active" data-scroll-target="#types-de-données-structures-séquentielles">Types de Données (Structures séquentielles)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Types de données</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="types-de-données-structures-séquentielles" class="level3">
+<h3 class="anchored" data-anchor-id="types-de-données-structures-séquentielles">Types de Données (Structures séquentielles)</h3>
+<p id="textIntro">
+Chaque type de données séquentielles offre des caractéristiques distinctes et des utilisations spécifiques, permettant une grande souplesse dans le traitement des données. Parmi eux, les listes et les dictionnaires se distinguent par leur flexibilité et leurs capacités de stockage dynamique, les rendant particulièrement populaires dans de nombreux scénarios d’utilisation.
+</p>
+<section id="les-chaines-de-caractères" class="level4">
+<h4 class="anchored" data-anchor-id="les-chaines-de-caractères">Les Chaines de Caractères</h4>
+<p id="textIntro">
+Les <strong>chaînes de caractères (str)</strong> sont utilisées pour stocker et manipuler du texte. Elles peuvent être définies en encadrant le texte entre des guillemets <strong>simples</strong> (‘…’), <strong>doubles</strong> (“…”), ou <strong>triples</strong> (’’‘…’’’ ou “““…”““) pour les chaînes multilignes. <br> Les chaînes sont des séquences de caractères <strong>indexées à partir de 0</strong> et peuvent contenir des caractères spéciaux, comme des guillemets, grâce aux caractères d’échappement (). Les chaînes de caractères offrent une gamme complète de méthodes pour le traitement de texte, les rendant extrêmement polyvalentes et <strong>indispensables</strong> pour une variété d’applications, de manipulations de base à des opérations plus complexes. Voici quelques exemples :
+</p>
+<div id="4e5155d0" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemples de chaines de caractères</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Chaine de caractères simple</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>maChaine <span class="op">=</span> <span class="st">'Python est un langage de programmation'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Chaine de caractères double</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>maChaine2 <span class="op">=</span> <span class="st">"Python est un langage de programmation"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Chaine avec un caractère d'échappement</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>maChaine3 <span class="op">=</span> <span class="st">'Python c</span><span class="ch">\'</span><span class="st">est trop bien'</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(maChaine)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(maChaine2)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(maChaine3)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># On peut accéder à des éléments</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Premier caractère</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>premierCaractere <span class="op">=</span> maChaine[<span class="dv">0</span>] <span class="co"># 'P'</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Dernier caractère</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>dernierCaractere <span class="op">=</span> maChaine[<span class="op">-</span><span class="dv">1</span>] <span class="co"># 'n'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Python est un langage de programmation
+Python est un langage de programmation
+Python c'est trop bien</code></pre>
+</div>
+</div>
+<p id="textIntro">
+Les méthodes sont des fonctions associées à des objets spécifiques, leur permettant d’exécuter des actions sur ces objets ou de manipuler leurs données internes. Contrairement aux fonctions indépendantes, les méthodes sont liées à des objets particuliers. <br> Par exemple, les méthodes des <strong>chaînes de caractères (str)</strong> sont conçues pour <strong>opérer sur des chaînes de caractères spécifiques</strong>. Elles sont appelées en utilisant la notation pointée, comme <strong>objet.methode()</strong>. Les méthodes de chaînes de caractères incluent des fonctionnalités telles que <strong>upper()</strong>, <strong>lower()</strong>, et <strong>replace()</strong>, permettant de convertir en majuscules, en minuscules ou de remplacer des parties spécifiques de la chaîne. Pour appeler une méthode, utilisez généralement la syntaxe objet.methode(arguments). <br> Pour utiliser ces méthodes vous pouvez les utiliser sur des variables contenant une chaine de caractères ou sur des chaines de caractères directement.
+</p>
+<div id="8b12f826" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Méthodes pour les chaînes de caractères</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># isupper() et islower()</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>chaineMaj <span class="op">=</span> <span class="st">"PYTHON"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>chaineMin <span class="op">=</span> <span class="st">"python"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>estMajuscule <span class="op">=</span> chaineMaj.isupper()</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>estMinuscule <span class="op">=</span> chaineMin.islower()</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(estMajuscule) <span class="co"># Résultat : True</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(estMinuscule) <span class="co"># Résultat : True</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># upper() et lower()</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>chaine <span class="op">=</span> <span class="st">"python est génial"</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>minToMaj <span class="op">=</span> chaine.upper()</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(minToMaj) <span class="co"># Résultat : "PYTHON EST GÉNIAL"</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>majToMin <span class="op">=</span> <span class="st">"PYTHON est GÉNIAL"</span>.lower()</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(majToMin) <span class="co"># Résultat : "python est génial"</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>chaineCapitalize <span class="op">=</span> chaine.capitalize() <span class="co"># La première lettre est en majuscule</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(chaineCapitalize) <span class="co"># Résultat : "Python est génial"</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>chaineTitle <span class="op">=</span> chaine.title() <span class="co"># La première lettre de chaque mot est en majuscule</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(chaineTitle) <span class="co"># Résultat : "Python Est Génial"</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>position <span class="op">=</span> chaine.find(<span class="st">"est"</span>) <span class="co"># La méthode find() renvoie l'index de la première occurrence de la chaîne recherchée</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(position) <span class="co"># Résultat : 7</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>chaineReplace <span class="op">=</span> <span class="st">"Les pommes sont rouges."</span>.replace(<span class="st">"pommes"</span>, <span class="st">"bananes"</span>) <span class="co"># La méthode replace() remplace une chaîne par une autre</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(chaineReplace) <span class="co"># Résultat : "Les bananes sont rouges."</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>chaineSplit <span class="op">=</span> chaine.split(<span class="st">" "</span>) <span class="co"># La méthode split() découpe une chaîne en une liste de sous-chaînes</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(chaineSplit) <span class="co"># Résultat : ["python", "est", "genial"]</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>elements <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"orange"</span>, <span class="st">"banana"</span>]</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>textJoin <span class="op">=</span> <span class="st">", "</span>.join(elements) <span class="co"># La méthode join() concatène les éléments d'une liste</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(textJoin) <span class="co"># Résultat : "apple, orange, banana"</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>textStrip <span class="op">=</span> <span class="st">" Bonjour "</span>.strip() <span class="co"># La méthode strip() supprime les espaces en début et fin de chaîne</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(textStrip) <span class="co"># Résultat : "Bonjour"</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>chaineStartsWith <span class="op">=</span> chaine.startswith(<span class="st">"Python"</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(chaineStartsWith) <span class="co"># Résultat : True</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>chaineEndsWith <span class="op">=</span> chaine.endswith(<span class="st">"génial"</span>)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(chaineEndsWith) <span class="co"># Résultat : True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+True
+PYTHON EST GÉNIAL
+python est génial
+Python est génial
+Python Est Génial
+7
+Les bananes sont rouges.
+['python', 'est', 'génial']
+apple, orange, banana
+Bonjour
+False
+True</code></pre>
+</div>
+</div>
+</section>
+<section id="les-listes" class="level4">
+<h4 class="anchored" data-anchor-id="les-listes">Les listes</h4>
+<p id="textIntro">
+Les listes représentent des <strong>structures de données</strong> permettant de stocker une <strong>séquence d’éléments</strong>. Elles offrent une grande souplesse, car elles peuvent contenir des éléments de types variés et sont modifiables. En tant que collections ordonnées, les éléments sont organisés de manière <strong>séquentielle</strong>, séparés par des virgules et enveloppés entre crochets pour les chaines de caractères. Pour créer une liste, il suffit d’encadrer une série d’éléments avec des crochets, séparés par des virgules, par exemple : [“Bonjour”, “Au revoir”, 75]. L’accès aux éléments se fait en utilisant leur index, en commençant par 0. Étant donné que les listes sont <strong>mutables</strong>, il est possible de modifier leurs éléments <strong>après leur création</strong>.
+</p>
+<div id="443ac720" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition d'une liste</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>maListe <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(maListe)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Accès au premier et au dernier élément</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>premierElement <span class="op">=</span> maListe[<span class="dv">0</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>dernierElement <span class="op">=</span> maListe[<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(premierElement, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>, dernierElement)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Modification du deuxième élément</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>maListe[<span class="dv">1</span>] <span class="op">=</span> <span class="st">"deux"</span> </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(maListe)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Concaténation et Répétition</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>combinee <span class="op">=</span> maListe <span class="op">+</span> [<span class="st">"autre"</span>, <span class="st">"liste"</span>]</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(combinee)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>repetee <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>] <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(repetee)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3, 'a', 'b', 'c']
+1 
+ c
+[1, 'deux', 3, 'a', 'b', 'c']
+[1, 'deux', 3, 'a', 'b', 'c', 'autre', 'liste']
+[1, 2, 3, 1, 2, 3, 1, 2, 3]</code></pre>
+</div>
+</div>
+<section id="le-slicing" class="level5">
+<h5 class="anchored" data-anchor-id="le-slicing">Le Slicing</h5>
+<p id="textIntro">
+En plus de permettre l’accès aux éléments d’une liste un par un, Python propose une syntaxe concise appelée <strong>slicing</strong> pour accéder aux sous-listes.
+</p>
+<div id="3111a7fd" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition d'une liste</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>maListe <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">5</span>)) <span class="co"># range() est une fonction qui renvoie une liste d'entiers</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Accès à une sous-liste en utilisant le slicing</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>sousListe1 <span class="op">=</span> maListe[<span class="dv">1</span>:<span class="dv">3</span>]  <span class="co"># Récupère les éléments de l'index 1 inclus jusqu'à l'index 3 non inclus</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>sousListe2 <span class="op">=</span> maListe[:<span class="dv">3</span>]   <span class="co"># Récupère les trois premiers éléments de la liste</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>sousListe3 <span class="op">=</span> maListe[<span class="dv">2</span>:]   <span class="co"># Récupère les éléments à partir de l'index 2 jusqu'à la fin de la liste</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>sousListe4 <span class="op">=</span> maListe[::<span class="dv">2</span>]  <span class="co"># Récupère les éléments avec un pas de 2</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage des sous-listes</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sous-liste 1:"</span>, sousListe1)  <span class="co"># Résultat : [1, 2]</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sous-liste 2:"</span>, sousListe2)  <span class="co"># Résultat : [0, 1, 2]</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sous-liste 3:"</span>, sousListe3)  <span class="co"># Résultat : [2, 3, 4]</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sous-liste 4:"</span>, sousListe4)  <span class="co"># Résultat : [0, 2, 4]</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemples de mutations de listes :</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Cas 1: source de même longueur</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>nums1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>nums1[<span class="dv">1</span>:] <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">5</span>]  <span class="co"># Remplace la sous-liste à partir de l'index 1 par [4, 5]</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nums1)  <span class="co"># Résultat : [1, 4, 5]</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Cas 2: source de longueur différente</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>nums2 <span class="op">=</span> nums1</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>nums2[<span class="dv">1</span>:] <span class="op">=</span> [<span class="dv">6</span>]  <span class="co"># Remplace la sous-liste à partir de l'index 1 par [6]</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nums2)  <span class="co"># Résultat : [1, 6]</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Vérification si les deux listes pointent vers le même objet en mémoire</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>isSameObject <span class="op">=</span> <span class="bu">id</span>(nums1) <span class="op">==</span> <span class="bu">id</span>(nums2)  <span class="co"># Vérifie si les listes pointent vers le même objet</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(isSameObject)  <span class="co"># Renvoie True car les listes sont mutables, donc elles sont modifiées en place</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sous-liste 1: [1, 2]
+Sous-liste 2: [0, 1, 2]
+Sous-liste 3: [2, 3, 4]
+Sous-liste 4: [0, 2, 4]
+[1, 4, 5]
+[1, 6]
+True</code></pre>
+</div>
+</div>
+</section>
+<section id="les-méthodes-de-listes" class="level5">
+<h5 class="anchored" data-anchor-id="les-méthodes-de-listes">Les méthodes de listes</h5>
+<p id="textIntro">
+Chaque méthode offre une fonctionnalité unique pour manipuler des listes, rendant ces structures de données extrêmement flexibles et puissantes pour une variété de tâches en programmation Python.
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Méthode</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Exemple d’Utilisation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>append()</strong></td>
+<td>Ajoute <strong>un élément</strong> à la fin de la liste.</td>
+<td>liste.append(5)</td>
+</tr>
+<tr class="even">
+<td><strong>extend()</strong></td>
+<td>Étend la liste en ajoutant <strong>tous les éléments d’une autre liste</strong>.</td>
+<td>liste.extend([6, 7])</td>
+</tr>
+<tr class="odd">
+<td><strong>insert()</strong></td>
+<td>Insère un élément à une position donnée.</td>
+<td>liste.insert(1, ‘a’)</td>
+</tr>
+<tr class="even">
+<td><strong>remove()</strong></td>
+<td>Supprime la première occurrence d’un élément.</td>
+<td>liste.remove(‘a’)</td>
+</tr>
+<tr class="odd">
+<td><strong>pop()</strong></td>
+<td>Supprime et renvoie un élément à une position donnée (par défaut, le dernier).</td>
+<td>liste.pop()</td>
+</tr>
+<tr class="even">
+<td><strong>clear()</strong></td>
+<td>Supprime tous les éléments de la liste.</td>
+<td>liste.clear()</td>
+</tr>
+<tr class="odd">
+<td><strong>index()</strong></td>
+<td>Retourne l’indice du premier élément correspondant.</td>
+<td>liste.index(‘a’)</td>
+</tr>
+<tr class="even">
+<td><strong>count()</strong></td>
+<td>Compte le nombre d’occurrences d’un élément spécifique.</td>
+<td>liste.count(5)</td>
+</tr>
+<tr class="odd">
+<td><strong>sort()</strong></td>
+<td>Trie les éléments de la liste (dans un ordre spécifique).</td>
+<td>liste.sort()</td>
+</tr>
+<tr class="even">
+<td><strong>reverse()</strong></td>
+<td>Inverse l’ordre des éléments de la liste.</td>
+<td>liste.reverse()</td>
+</tr>
+</tbody>
+</table>
+<div id="45ec986a" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d'une liste de base</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>maListe <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(maListe)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajout d'un élément à la fin de la liste avec append()</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>maListe.append(<span class="st">"quatre"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après append(quatre):"</span>, maListe)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Extension de la liste en ajoutant les éléments d'une autre liste avec extend()</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>maListe.extend([<span class="dv">5</span>, <span class="dv">6</span>])</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après extend([5, 6]):"</span>, maListe)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Insertion d'un élément à un index spécifique avec insert()</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>maListe.insert(<span class="dv">1</span>, <span class="st">'elephant'</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après insert(1, 'elephant'):"</span>, maListe)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Suppression de la première occurrence d'un élément spécifié avec remove()</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>maListe.remove(<span class="st">'elephant'</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après remove('elephant'):"</span>, maListe)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Suppression et retour de l'élément à la fin de la liste avec pop()</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>elementSupprime <span class="op">=</span> maListe.pop()</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après pop():"</span>, maListe, <span class="st">", Élément supprimé:"</span>, elementSupprime)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Suppression de tous les éléments de la liste avec clear()</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>maListe.clear()</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après clear():"</span>, maListe)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Recréation de la liste pour les autres méthodes</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>maListe <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>]</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Recherche de l'index de la première occurrence d'un élément spécifié avec index()</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>indexDe4 <span class="op">=</span> maListe.index(<span class="dv">4</span>)</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Index de 4:"</span>, indexDe4)</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Comptage du nombre d'occurrences d'un élément spécifié avec count()</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>compteDe2 <span class="op">=</span> maListe.count(<span class="dv">2</span>)</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Nombre d'occurrences de 2:"</span>, compteDe2)</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Tri des éléments de la liste dans l'ordre croissant avec sort()</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>maListe.sort()</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après sort():"</span>, maListe)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Inversion de l'ordre des éléments dans la liste avec reverse()</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>maListe.reverse()</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après reverse():"</span>, maListe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3]
+Après append(quatre): [1, 2, 3, 'quatre']
+Après extend([5, 6]): [1, 2, 3, 'quatre', 5, 6]
+Après insert(1, 'elephant'): [1, 'elephant', 2, 3, 'quatre', 5, 6]
+Après remove('elephant'): [1, 2, 3, 'quatre', 5, 6]
+Après pop(): [1, 2, 3, 'quatre', 5] , Élément supprimé: 6
+Après clear(): []
+Index de 4: 2
+Nombre d'occurrences de 2: 2
+Après sort(): [1, 2, 2, 3, 4]
+Après reverse(): [4, 3, 2, 2, 1]</code></pre>
+</div>
+</div>
+</section>
+<section id="parcours-de-liste" class="level5">
+<h5 class="anchored" data-anchor-id="parcours-de-liste">Parcours de liste</h5>
+<p id="textIntro">
+Le parcours de liste consiste à accéder séquentiellement à chaque élément d’une liste. Cela peut être fait de différentes manières, mais les plus courantes sont les boucles <strong>for</strong> et <strong>while</strong> .
+</p>
+<ul>
+<li><p>Boucle for : : La boucle for est la méthode la plus couramment utilisée pour parcourir une liste. Elle permet de traiter chaque élément individuellement.</p></li>
+<li><p>List Comprehension : La compréhension de liste est une méthode concise pour créer des listes. Elle permet de transformer une liste en une autre liste, en filtrant les éléments pour former une liste des résultats d’une expression donnée</p></li>
+</ul>
+<p id="textIntro">
+La syntaxe de base d’une compréhension de liste est : <strong>[<strong><code>nouvelle_expression</code> </strong>for <code>item</code> <strong>in</strong> <code>iterable</code> <strong>if</strong> <code>condition</code>**]</strong>
+</p><ul>
+<li>
+<p id="textIntro">
+<strong>nouvelle_expression</strong> est l’expression qui définit comment <strong>mapper</strong> les éléments de l’ iterable (par exemple, une liste).
+</p>
+</li>
+<li>
+<p id="textIntro">
+<strong>item</strong> est la variable qui prend la valeur de chaque élément de l’ iterable pendant chaque itération.
+</p>
+</li>
+<li>
+<p id="textIntro">
+<strong>condition</strong> est une condition optionnelle pour filtrer les éléments de l’ iterable.
+</p>
+</li>
+</ul>
+<p id="textIntro">
+Nous allons voir des exemples de parcours de liste en utilisant une boucle for puis en utilisant une <strong>list comprehension</strong> :
+</p>
+<div id="7567d458" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># récupérer tous les fruits avec un "a"</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"kiwi"</span>, <span class="st">"mango"</span>]</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>autreListe <span class="op">=</span> []</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>autreListe2 <span class="op">=</span> []</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec une boucle for</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> fruits:</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"a"</span> <span class="kw">in</span> f:</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        autreListe.append(f)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(autreListe)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Avec une list comprehension</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>autreListe2 <span class="op">=</span> [f <span class="cf">for</span> f <span class="kw">in</span> fruits <span class="cf">if</span> <span class="st">"a"</span> <span class="kw">in</span> f ]</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(autreListe2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['apple', 'banana', 'mango']
+['apple', 'banana', 'mango']</code></pre>
+</div>
+</div>
+<p id="textIntro">
+Nous pouvons voir que <strong>les list comprehension</strong> sont un moyen d’écrire un code plus concis mais toujours autant compréhensible ! Alors pourquoi se prendre la tête avec une boucle for ? 😎 <br> Elles peuvent aussi être utilisées pour effectuer des calculs sur tous les éléments d’une liste. Voyons ça :
+</p>
+<div id="c66152e2" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Elevation des nombres d'une liste au carré</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>nombres <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">111</span>]</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>nombreCarres <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> nombres]</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nombreCarres) <span class="co"># [4, 25, 100, 12321]</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrer les nombres pairs d'une liste</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>carresPairs <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> nombreCarres <span class="cf">if</span> x<span class="op">%</span><span class="dv">2</span><span class="op">==</span><span class="dv">0</span>]</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(carresPairs)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Appliquer une méthode à tous les éléments</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>fruits_majuscule <span class="op">=</span> [fruit.upper() <span class="cf">for</span> fruit <span class="kw">in</span> fruits]</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(fruits_majuscule)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[4, 25, 100, 12321]
+[4, 100]
+['APPLE', 'BANANA', 'CHERRY', 'KIWI', 'MANGO']</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="les-tuples" class="level4">
+<h4 class="anchored" data-anchor-id="les-tuples">Les tuples</h4>
+<p id="textIntro">
+Les tuples sont des listes <strong>non mutables</strong>. Cela signifie que les éléments d’un tuple ne peuvent pas être modifiés après création. Les éléments sont séparés par dé virgules et sont entourés de parenthèses.
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Avantage</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Sécurité des Données</strong></td>
+<td>Parfait pour protéger les données contre les modifications.</td>
+</tr>
+<tr class="even">
+<td><strong>Performance</strong></td>
+<td>Plus rapides à parcourir que les listes.</td>
+</tr>
+<tr class="odd">
+<td><strong>Utilisation en tant que Clés de Dictionnaire</strong></td>
+<td>Peuvent être utilisés comme clés dans les dictionnaires, contrairement aux listes.</td>
+</tr>
+<tr class="even">
+<td><strong>Retour de Plusieurs Valeurs de Fonction</strong></td>
+<td>Utilisés pour retourner plusieurs valeurs depuis une fonction.</td>
+</tr>
+<tr class="odd">
+<td><strong>Stockage de Données Constantes</strong></td>
+<td>Idéaux pour stocker des données qui ne doivent pas être modifiées.</td>
+</tr>
+</tbody>
+</table>
+<div id="d8e5f2c6" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition d'un tuple</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>monTuple <span class="op">=</span> (<span class="dv">10</span>, <span class="st">"b"</span>, <span class="fl">3.14</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(monTuple)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>unAutreTuple <span class="op">=</span> <span class="dv">20</span>, <span class="st">"c"</span>, <span class="fl">4.28</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(unAutreTuple)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>elementIndex1 <span class="op">=</span> monTuple[<span class="dv">1</span>]</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(elementIndex1)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Tuple à Un Élément</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>tupleSingleton <span class="op">=</span> <span class="dv">50</span>,</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tupleSingleton)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Tuple à Un Élément</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>tupleSingleton <span class="op">=</span> (<span class="dv">50</span>,)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Imbrication</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>tupleImbrique <span class="op">=</span> (<span class="dv">10</span>, (<span class="dv">20</span>, <span class="dv">30</span>), (<span class="dv">40</span>, <span class="dv">50</span>))</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Méthodes Utiles</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>longueur <span class="op">=</span> <span class="bu">len</span>(monTuple)  <span class="co"># Retourne la longueur de monTuple, ici 3</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(longueur)</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>compteur <span class="op">=</span> monTuple.count(<span class="st">"b"</span>)  <span class="co"># Compte le nombre de fois que "b" apparaît dans monTuple, ici 1</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(compteur)</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>indice <span class="op">=</span> monTuple.index(<span class="st">"b"</span>)  <span class="co"># Trouve l'indice de "b" dans monTuple, ici 1</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(indice)</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a><span class="co"># L'affectation n'est pas possible</span></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a><span class="co"># monTuple[1] = "c"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(10, 'b', 3.14)
+(20, 'c', 4.28)
+b
+(50,)
+3
+1
+1</code></pre>
+</div>
+</div>
+</section>
+<section id="les-ensembles" class="level4">
+<h4 class="anchored" data-anchor-id="les-ensembles">Les ensembles</h4>
+<p id="textIntro">
+Les ensembles sont :
+</p>
+<ul>
+<li><p>Des collections non ordonnées de <strong>valeurs uniques</strong></p></li>
+<li><p><strong>Mutables</strong>, mais chaque élément doit être <strong>unique</strong>.</p></li>
+<li><p><strong>Non-Ordonnés</strong> : Les ensembles ne <strong>maintiennent pas</strong> l’ordre des éléments. On ne peut donc pas accéder aux éléments par un index.</p></li>
+<li><p>Les éléments sont séparés par des virgules, et encadrés par des accolades</p></li>
+</ul>
+<section id="opérations-sur-les-ensembles" class="level5">
+<h5 class="anchored" data-anchor-id="opérations-sur-les-ensembles">Opérations sur les ensembles</h5>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 11%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Opération</strong></th>
+<th><strong>Syntaxe</strong></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Union</strong></td>
+<td><strong>a | b</strong></td>
+<td>Retourne un nouvel ensemble contenant tous les éléments uniques des ensembles a et b.</td>
+</tr>
+<tr class="even">
+<td><strong>Intersection</strong></td>
+<td><strong>a &amp; b</strong></td>
+<td>Retourne un nouvel ensemble contenant uniquement les éléments communs aux ensembles a et b.</td>
+</tr>
+<tr class="odd">
+<td><strong>Différence</strong></td>
+<td><strong>a - b</strong></td>
+<td>Retourne un nouvel ensemble contenant les éléments de a qui ne sont pas dans b.</td>
+</tr>
+<tr class="even">
+<td><strong>Différence Symétrique</strong></td>
+<td><strong>a ^ b</strong></td>
+<td>Retourne un nouvel ensemble contenant tous les éléments qui sont dans a ou b, mais pas dans les deux.</td>
+</tr>
+<tr class="odd">
+<td><strong>Ajout</strong></td>
+<td><strong>a.add(x)</strong></td>
+<td>Ajoute l’élément x à l’ensemble a.</td>
+</tr>
+<tr class="even">
+<td><strong>Suppression</strong></td>
+<td><strong>a.remove(x)</strong></td>
+<td>Supprime l’élément x de l’ensemble a ; <strong>lève une erreur si x n’est pas présent</strong>.</td>
+</tr>
+<tr class="odd">
+<td><strong>Suppression (sans erreur)</strong></td>
+<td><strong>a.discard(x)</strong></td>
+<td>Supprime l’élément x de l’ensemble a si x est présent ; <strong>ne fait rien sinon</strong>.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="les-dictionnaires" class="level4">
+<h4 class="anchored" data-anchor-id="les-dictionnaires">Les dictionnaires</h4>
+<p id="textIntro">
+Les dictionnaires sont un peu comme un format de JSON :
+</p>
+<ul>
+<li>Ils sont basés sur des paires <strong>clés-valeurs</strong></li>
+<li>On accède aux valeurs via les <strong>clés</strong></li>
+<li>Ils sont <strong>mutables</strong>, on peut y <strong>ajouter</strong> des éléments, en <strong>supprimer</strong> ou en <strong>modifier</strong></li>
+<li></li>
+<li>Utilisation :</li>
+<li><strong>Stockage d’Informations Structurées</strong> : Parfait pour stocker des informations complexes comme des données utilisateur.</li>
+<li><strong>Recherche Rapide</strong> : Utilisez des dictionnaires pour des recherches rapides basées sur des clés uniques</li>
+</ul>
+<p id="textIntro">
+Il existe des méthodes liées aux variables de type dictionnaire pour les manier :
+</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 79%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Méthode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong><code>dict.keys()</code></strong></td>
+<td>Retourne une vue sur les clés du dictionnaire.</td>
+</tr>
+<tr class="even">
+<td><strong><code>dict.values()</code></strong></td>
+<td>Retourne une vue sur les valeurs du dictionnaire.</td>
+</tr>
+<tr class="odd">
+<td><strong><code>dict.items()</code></strong></td>
+<td>Retourne une vue sur les paires (clé, valeur) du dictionnaire.</td>
+</tr>
+<tr class="even">
+<td><strong><code>dict.get(key)</code></strong></td>
+<td>Retourne la valeur associée à la clé spécifiée.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Si la clé n’existe pas, retourne <code>None</code> ou une valeur par défaut spécifiée en argument.</td>
+</tr>
+<tr class="even">
+<td><strong><code>dict.pop(key)</code></strong></td>
+<td>Retourne la valeur associée à la clé spécifiée et supprime cette paire du dictionnaire.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Si la clé n’existe pas, retourne une valeur par défaut spécifiée en argument ou lève une erreur.</td>
+</tr>
+<tr class="even">
+<td><strong><code>dict.popitem()</code></strong></td>
+<td>Retourne et supprime une paire (clé, valeur) arbitraire du dictionnaire.</td>
+</tr>
+<tr class="odd">
+<td><strong><code>dict.update(other_dict)</code></strong></td>
+<td>Met à jour le dictionnaire avec les paires clé-valeur du dictionnaire spécifié en argument.</td>
+</tr>
+<tr class="even">
+<td><strong><code>dict.clear()</code></strong></td>
+<td>Supprime toutes les paires clé-valeur du dictionnaire, le laissant vide.</td>
+</tr>
+</tbody>
+</table>
+<div id="45c18319" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d'un dictionnaire</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>individu <span class="op">=</span> {<span class="st">"nom"</span>: <span class="st">"Alice"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>autre_dictionnaire <span class="op">=</span> <span class="bu">dict</span>(nom<span class="op">=</span><span class="st">"Bob"</span>, age<span class="op">=</span><span class="dv">25</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>individu</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajout et mise à jour</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>individu[<span class="st">"profession"</span>] <span class="op">=</span> <span class="st">"Développeur"</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>individu</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Mise à jour de plusieurs clés</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>individu.update([(<span class="st">'nom'</span>, <span class="st">"Romain"</span>), (<span class="st">'profession'</span>, <span class="st">"Data Scientist"</span>)])</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>individu</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de keys()</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>cles <span class="op">=</span> individu.keys()</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Clés:"</span>, cles)</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de values()</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>valeurs <span class="op">=</span> individu.values()</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Valeurs:"</span>, valeurs)</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de items()</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>paires <span class="op">=</span> individu.items()</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Paires clé-valeur:"</span>, paires)</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de get()</span></span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>nom_personne <span class="op">=</span> individu.get(<span class="st">"nom"</span>)</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>age_personne <span class="op">=</span> individu.get(<span class="st">"age"</span>)</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nom_personne, age_personne)</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Récupération de la valeur de la clé "ville"</span></span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>ville <span class="op">=</span> individu.get(<span class="st">"ville"</span>)</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>ville</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Récupération de la valeur de la clé "ville" avec une valeur par défaut</span></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>ville <span class="op">=</span> individu.get(<span class="st">"ville"</span>, <span class="st">"Non spécifiée"</span>)</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ville:"</span>, ville)</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Parcours des clés</span></span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Parcours des clés:"</span>)</span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> cle <span class="kw">in</span> individu.keys():</span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(cle)</span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Parcours des valeurs</span></span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Parcours des valeurs:"</span>)</span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> valeur <span class="kw">in</span> individu.values():</span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(valeur)</span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a><span class="co"># Parcours des paires clé-valeur</span></span>
+<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Parcours des paires clé-valeur:"</span>)</span>
+<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> cle, valeur <span class="kw">in</span> individu.items():</span>
+<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(cle, <span class="st">":"</span>, valeur)</span>
+<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Parcours des paires clé-valeur avec enumerate</span></span>
+<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Parcours des paires clé-valeur avec enumerate:"</span>)</span>
+<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, (cle, valeur) <span class="kw">in</span> <span class="bu">enumerate</span>(individu.items()):</span>
+<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Index </span><span class="sc">{</span>index<span class="sc">}</span><span class="ss">: Clé = </span><span class="sc">{</span>cle<span class="sc">}</span><span class="ss">, Valeur = </span><span class="sc">{</span>valeur<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Suppression d'une clé et de sa valeur</span></span>
+<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> individu[<span class="st">"age"</span>]</span>
+<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(individu)</span>
+<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Suppression d'une clé avec retour de sa valeur</span></span>
+<span id="cb17-64"><a href="#cb17-64" aria-hidden="true" tabindex="-1"></a>profession <span class="op">=</span> individu.pop(<span class="st">"profession"</span>)</span>
+<span id="cb17-65"><a href="#cb17-65" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(profession)</span>
+<span id="cb17-66"><a href="#cb17-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-67"><a href="#cb17-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Suppression d'une clé avec retour de sa valeur et gestion de l'absence de la clé</span></span>
+<span id="cb17-68"><a href="#cb17-68" aria-hidden="true" tabindex="-1"></a>ville_supprimee <span class="op">=</span> individu.pop(<span class="st">"ville"</span>, <span class="st">"Non spécifiée"</span>)</span>
+<span id="cb17-69"><a href="#cb17-69" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ville_supprimee)</span>
+<span id="cb17-70"><a href="#cb17-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-71"><a href="#cb17-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage du dictionnaire après les suppressions</span></span>
+<span id="cb17-72"><a href="#cb17-72" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(individu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Clés: dict_keys(['nom', 'age', 'profession'])
+Valeurs: dict_values(['Romain', 30, 'Data Scientist'])
+Paires clé-valeur: dict_items([('nom', 'Romain'), ('age', 30), ('profession', 'Data Scientist')])
+Romain 30
+Ville: Non spécifiée
+
+Parcours des clés:
+nom
+age
+profession
+
+Parcours des valeurs:
+Romain
+30
+Data Scientist
+
+Parcours des paires clé-valeur:
+nom : Romain
+age : 30
+profession : Data Scientist
+
+Parcours des paires clé-valeur avec enumerate:
+Index 0: Clé = nom, Valeur = Romain
+Index 1: Clé = age, Valeur = 30
+Index 2: Clé = profession, Valeur = Data Scientist
+{'nom': 'Romain', 'profession': 'Data Scientist'}
+Data Scientist
+Non spécifiée
+{'nom': 'Romain'}</code></pre>
+</div>
+</div>
+<p id="textIntro">
+Vous êtes maintenant des pros des données séquentielles ! Pensez-vous que cela suffit ? Continuez de vous instruire en <a href="./comm_affiche.html">cliquant ici</a> pour passer à la suite.
+</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/jojokujooo\.github\.io\/Les-Fondamentaux-de-Python\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
