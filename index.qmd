@@ -1,0 +1,10 @@
+---
+title: "Les Fondamentaux de Python"
+---
+
+<p id=textIntro>Bonjour ! Moi c'est <strong>Johann Cazenave</strong>, le remplaçant temporaire de votre prof de programmation <a href="https://www.linkedin.com/in/menyssacherifaluron/">Ményssa Chérifa-Luron, Ph.D</a> car elle n'est pas encore rentrée de son voyage en Corée. Mais ce n'est pas pour autant que vous allez rater cette magnifique formation !</p>
+<p id=textIntro>Au programme ? Une révision des bases de Python car c'est souvent celles que l'on néglige le plus et qui sont finalement les bases de tout langage de programmation.</p>
+
+# Mais Johann, c'est quoi Python ?
+<p id=textIntro>Python, c'est un peu comme un <strong> super-héros</strong> de la programmation, né en 1989 dans l'esprit créatif de Guido van Rossum, un fan de la comédie absurde des Monty Python. C'est un langage de programmation qui a tout pour plaire : il est polyvalent, gratuit comme l'air que vous respirez, et tellement simple à utiliser que même votre grand-mère pourrait s'y mettre (peut-être même votre chat, qui sait ?). Avec Python, vous pouvez jongler avec des milliers de lignes de code sans jamais vous prendre les pieds dans le tapis, car il est conçu pour être aussi convivial qu'un panda câlin. Vous pouvez l'installer sur tous vos gadgets électroniques, du PC de papa à votre smartphone dernier cri, sans débourser un sou. Et le meilleur dans tout ça ? Pas besoin de vous tracasser avec des compilateurs compliqués : Python est un langage interprété, ce qui signifie que vous pouvez voir les résultats de votre travail en un clin d'œil, sans avoir à attendre des heures que votre code se transforme en quelque chose de tangible. Alors, prêt à devenir un super-héros de la programmation avec Python ? <a href=var_ope.qmd>Clique ici !</a></p>
+

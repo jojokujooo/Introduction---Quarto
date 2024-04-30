@@ -1,0 +1,204 @@
+---
+title: "Variables et opérations"
+---
+
+## Les variables
+<p id=textIntro>Concrètement, les variables sont juste des éléments qui peuvent contenir des données, même si c'est plus compliqué que ça si vous le retenez c'est déjà pas mal. Elles sont déclarées avec le <strong>nom de la variable</strong> suivi d'un =, puis de leurs valeurs.</p>
+<p id=textIntro>Par exemple, si je veux créer une variable qui contient le nombre 1, je peux écrire :</p>
+
+```{python}
+a = 1
+a
+```
+
+<p id=textIntro>Mais n'oubliez pas, il y a quand même des règles pour nommer les variables : pas de chiffres au début, pas de symboles bizarres, et ne pas mélanger des mots et des chiffres directement. </p>
+
+<p id=textIntro>De plus, il y a différentes manières de nommer une variable, voici des exemples :</p>
+* Le camelCase : Consiste à écrire chaque mot commençant par une majuscule sauf le premier et sans espaces
+
+* Le snake_case : Consiste à écrire chaque mot séparé par un underscore
+
+* Le PascalCase : Consiste à écrire chaque mot commençant par une majuscule et sans espaces
+
+```{python}
+maVariableExemple = 1       # Ceci est une variable écrite en camelCase
+
+ma_variable_exemple = 1     # Ceci est une variable écrite en snake_case
+
+MaVariableExemple = 1       # Ceci est une variable écrite en PascalCase
+
+```
+
+<p id=textIntro>Il y a également plusieurs moyens de donner une valeur à une variable, voici les exemples les plus communs : </p>
+
+```{python}
+
+# Voici l'affectation simple
+maVariable = 5    
+
+# Voici l'affectation par décomposition
+maVar1, maVar2, maVar3 = "valeur 1", "valeur 2", "valeur 3"
+print(maVar1, maVar2, maVar3)
+
+# Voici l'affectation de la même valeur à plusieurs variables
+maVar1 = maVar2 = maVar3 = 20   
+print(maVar1, maVar2, maVar3)
+
+```
+
+### Les types de variables
+
+<p id=textIntro>Il y a plusieurs types de variables en Python. Les types de variables en Python sont des catégories qui définissent le type de données qu'une variable peut contenir. En Python, nous rencontrons principalement trois types de variables :</p>
+
+* Les variables **numériques** : les variables numériques sont des variables qui peuvent contenir des **nombres**. On peut en trouver de différents types : **entiers(int)**, **décimaux(float)** et même **complexes(complex)** (1, 2.5, 4+2j)
+
+* Les variables de **chaîne de caractères** : Les chaînes de caractères, plus communément **appelées "string"** sont des variables qui peuvent contenir du **texte**. Comme "Bonjour" ou même des paragraphes entiers ! La spécificité des string c'est qu'elles peuvent être délimitées par des **guillemets simples** (' '), **doubles** (" ") ou **triples** (''' '''). La particularité des guillemets triples c'est qu'elles peuvent contenir des **sauts de ligne**.
+
+* Les variables **booléennes** : Les variables booléennes sont des variables qui peuvent contenir des valeurs booléennes donc soit **vraie** (True) soit **fausse** (False). Elles sont utilisées
+pour représenter des conditions ou des états logiques.
+
+```{python}
+
+nomSimple = 'Ményssa'
+nomDouble = "Johann"
+nomTriple = '''Fré
+dé
+ric'''
+age = 22
+taille = 1.82
+estVrai = True
+estFaux = False
+
+print("La variable nomSimple est de type: ", type(nomSimple))
+print("La variable age est de type: ", type(age))
+print("La variable taille est de type: ", type(taille))
+print("La variable estVrai est de type: ",type(estVrai))
+
+```
+
+### Conversion de types
+<p id=textIntro>Il est possible de convertir un type de variable en un autre. Il existe des fonctions appelées <i><strong>cast ou casting</i></strong>. Voici quelques exemples :</p>
+
+```{python}
+# Fonctions utilisées : int(), str(), bool(), float()
+# Conversion en entier
+## Depuis une chaine de caractères
+chaine = "200"
+chaineEnEntier = int(chaine) # On convertit la chaine en nombre
+
+## Depuis un booléen
+boolEnEntier= int(estVrai) # On convertit le booléen en nombre
+
+## Flottant en nombre
+floatEnEntier = int(taille) # On convertit le flottant en nombre, il est troncaturé mais pas arrondi
+
+# Conversion en Chaine de Caractères
+## Depuis un entier ou un flottant
+entierEnChaine = str(chaineEnEntier) # On convertit le nombre en chaine
+
+## Depuis un booléen
+boolEnChaine = str(estVrai) # Convertit False en "False" et True en "True"
+
+# Conversion en booléen
+## Depuis une chaine de caractères
+chaineEnBool = bool(chaine) # Convertit une chaine non-vide en True et une chaine vide en False
+
+## Depuis un nombre
+nombreEnBool = bool(chaineEnEntier) # Convertit 0 en False et tout autre nombre en True
+
+# Conversion en flottant
+## Depuis une chaine de caractères
+chaineEnFlottant = float(chaine) # Convertit une chaine de caractères en flottant
+
+## Depuis un entier
+entierEnFlottant = float(chaineEnEntier) # Convertit 200 en 200.0
+
+## Depuis un booléen
+boolEnFlottant = float(estVrai) # Convertit True en 1.0 et False en 0.0
+
+```
+
+### Opérations Arithmétiques
+<p id=textIntro>Les opérations arithmétiques sont les mêmes que dans les autres langages. Voici des exemples d'utilisation d'opérations</p>
+
+```{python}
+# Addition (+)
+somme = 6 + 5
+# Soustraction (-)
+difference = 6 - 5
+
+# Multiplication 
+produit = 6 * 5
+
+# Division (/)
+
+quotient = 6 / 5
+
+# Modulo (%) Permet de calculer le reste d'une division
+reste = 6 % 5
+
+# Puissance(**) Permet d'élever un nombre à une puissance
+puissance = 6 ** 5
+
+```
+
+### Opérations sur les chaines de caractères
+<p id=textIntro>Nous pouvons utiliser certaines opérations sur des chaines de caractères comme :</p>
+
+* L'addition (+) : Permet de combiener des chaines de caractères
+* La multiplication (*) : Permet de répéter une chaine de caractères le nombre de fois que l'on donne
+
+<p id=textIntro>Voici des exemples d'utilisation d'opérations</p>
+
+```{python}
+# Addition (+)
+chaine1 = "Bonjour"
+chaine2 = "tout le monde" 
+
+chaineCombinee = chaine1 + chaine2 # Affiche "Bonjour tout le monde"
+print(chaineCombinee)
+# Multiplication (*)
+chaineRepetee = chaine1 * 3 # Affiche "BonjourBonjourBonjour"
+print(chaineRepetee)
+```
+
+### Opérateurs d'affectations composées
+<p id=textIntro>Les opérateurs d'affectations composées sont des opérateurs qui permettent de combiner des opérations arithmétiques et des affectations à des variable. Simplifiant ainsi le code en effectuant une opération sur une variable et en lui réaffectant le résultat en une seule ligne de code.</p>
+<p id=textIntro>Voici des exemples d'utilisation d'opérateurs d'affectation :</p>
+
+```{python}
+# Création / Initialisation de la variable
+nombre = 10
+
+# Opérateur d'affectation combinée
+# Addition et assignation
+nombre += 5 # nombre = nombre + 5
+print(nombre) # Affiche 15
+
+# Soustraction et assignation
+nombre -= 5 # nombre = nombre - 5
+print(nombre) # Affiche 10
+
+# Multiplication et assignation
+nombre *= 5 # nombre = nombre * 5
+print(nombre) # Affiche 50
+
+# Division et assignation
+nombre /= 5 # nombre = nombre / 5
+print(nombre) # Affiche 10.0
+
+# Division entière et assignation
+nombre //= 2 # nombre = nombre // 2
+print(nombre) # Affiche 5
+
+# Modulo et assignation
+nombre %= 3 # nombre = nombre % 3
+print(nombre) # Affiche 2.0
+
+# Puissance et assignation
+nombre **= 2 # nombre = nombre ** 2
+print(nombre) # Affiche 4.0
+
+```
+
+<p id=textIntro>Nous en avons enfin fini avec les variables ! Etes vous prêt pour la suite ? <a href=comm_affiche.qmd>Cliquez-ici</a> pour passer à la suite.</p>

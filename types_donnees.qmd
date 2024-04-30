@@ -1,0 +1,377 @@
+---
+title: Types de données
+---
+
+### Types de Données (Structures séquentielles)
+
+<p id=textIntro>Chaque type de données séquentielles offre des caractéristiques distinctes et des utilisations spécifiques, permettant une grande souplesse dans le traitement des données. Parmi eux, les listes et les dictionnaires se distinguent par leur flexibilité et leurs capacités de stockage dynamique, les rendant particulièrement populaires dans de nombreux scénarios d'utilisation.</p>
+
+#### Les Chaines de Caractères
+
+<p id=textIntro>
+Les **chaînes de caractères (str)** sont utilisées pour stocker et manipuler du texte. Elles peuvent être définies en encadrant le texte entre des guillemets **simples** ('...'), **doubles** ("..."), ou **triples** ('''...''' ou """...""") pour les chaînes multilignes. <br>
+Les chaînes sont des séquences de caractères **indexées à partir de 0** et peuvent contenir des caractères spéciaux, comme des guillemets, grâce aux caractères d'échappement (\). Les chaînes de caractères offrent une gamme complète de méthodes pour le traitement de texte, les rendant extrêmement polyvalentes et **indispensables** pour une variété d'applications, de manipulations de base à des opérations plus complexes. Voici quelques exemples :
+</p>
+
+```{python}
+# Exemples de chaines de caractères
+# Chaine de caractères simple
+maChaine = 'Python est un langage de programmation'
+
+# Chaine de caractères double
+maChaine2 = "Python est un langage de programmation"
+
+# Chaine avec un caractère d'échappement
+maChaine3 = 'Python c\'est trop bien'
+
+print(maChaine)
+print(maChaine2)
+print(maChaine3)
+
+# On peut accéder à des éléments
+# Premier caractère
+premierCaractere = maChaine[0] # 'P'
+# Dernier caractère
+dernierCaractere = maChaine[-1] # 'n'
+
+```
+<p id=textIntro> 
+Les méthodes sont des fonctions associées à des objets spécifiques, leur permettant d'exécuter des actions sur ces objets ou de manipuler leurs données internes. Contrairement aux fonctions indépendantes, les méthodes sont liées à des objets particuliers.
+<br> Par exemple, les méthodes des **chaînes de caractères (str)** sont conçues pour **opérer sur des chaînes de caractères spécifiques**. Elles sont appelées en utilisant la notation pointée, comme **objet.methode()**. Les méthodes de chaînes de caractères incluent des fonctionnalités telles que **upper()**, **lower()**, et **replace()**, permettant de convertir en majuscules, en minuscules ou de remplacer des parties spécifiques de la chaîne. Pour appeler une méthode, utilisez généralement la syntaxe objet.methode(arguments).
+<br>
+Pour utiliser ces méthodes vous pouvez les utiliser sur des variables contenant une chaine de caractères ou sur des chaines de caractères directement.
+</p>
+
+```{python}
+# Méthodes pour les chaînes de caractères
+
+# isupper() et islower()
+
+chaineMaj = "PYTHON"
+chaineMin = "python"
+estMajuscule = chaineMaj.isupper()
+estMinuscule = chaineMin.islower()
+print(estMajuscule) # Résultat : True
+print(estMinuscule) # Résultat : True
+
+# upper() et lower()
+chaine = "python est génial"
+minToMaj = chaine.upper()
+print(minToMaj) # Résultat : "PYTHON EST GÉNIAL"
+
+majToMin = "PYTHON est GÉNIAL".lower()
+print(majToMin) # Résultat : "python est génial"
+
+chaineCapitalize = chaine.capitalize() # La première lettre est en majuscule
+print(chaineCapitalize) # Résultat : "Python est génial"
+
+chaineTitle = chaine.title() # La première lettre de chaque mot est en majuscule
+print(chaineTitle) # Résultat : "Python Est Génial"
+
+position = chaine.find("est") # La méthode find() renvoie l'index de la première occurrence de la chaîne recherchée
+print(position) # Résultat : 7
+
+chaineReplace = "Les pommes sont rouges.".replace("pommes", "bananes") # La méthode replace() remplace une chaîne par une autre
+print(chaineReplace) # Résultat : "Les bananes sont rouges."
+
+chaineSplit = chaine.split(" ") # La méthode split() découpe une chaîne en une liste de sous-chaînes
+print(chaineSplit) # Résultat : ["python", "est", "genial"]
+
+elements = ["apple", "orange", "banana"]
+textJoin = ", ".join(elements) # La méthode join() concatène les éléments d'une liste
+print(textJoin) # Résultat : "apple, orange, banana"
+
+textStrip = " Bonjour ".strip() # La méthode strip() supprime les espaces en début et fin de chaîne
+print(textStrip) # Résultat : "Bonjour"
+
+chaineStartsWith = chaine.startswith("Python")
+print(chaineStartsWith) # Résultat : True
+
+chaineEndsWith = chaine.endswith("génial")
+print(chaineEndsWith) # Résultat : True
+
+```
+
+#### Les listes
+<p id=textIntro>
+Les listes représentent des **structures de données** permettant de stocker une **séquence d'éléments**. Elles offrent une grande souplesse, car elles peuvent contenir des éléments de types variés et sont modifiables. En tant que collections ordonnées, les éléments sont organisés de manière **séquentielle**, séparés par des virgules et enveloppés entre crochets pour les chaines de caractères. Pour créer une liste, il suffit d'encadrer une série d'éléments avec des crochets, séparés par des virgules, par exemple : ["Bonjour", "Au revoir", 75]. L'accès aux éléments se fait en utilisant leur index, en commençant par 0. Étant donné que les listes sont **mutables**, il est possible de modifier leurs éléments **après leur création**.
+</p>
+
+```{python}
+
+# Définition d'une liste
+maListe = [1, 2, 3, "a", "b", "c"]
+print(maListe)
+
+# Accès au premier et au dernier élément
+premierElement = maListe[0]
+dernierElement = maListe[-1]
+print(premierElement, "\n", dernierElement)
+
+# Modification du deuxième élément
+maListe[1] = "deux" 
+print(maListe)
+
+# Concaténation et Répétition
+combinee = maListe + ["autre", "liste"]
+print(combinee)
+
+repetee = [1, 2, 3] * 3
+print(repetee)
+
+
+```
+
+##### Le Slicing
+<p id=textIntro>En plus de permettre l'accès aux éléments d'une liste un par un, Python propose une syntaxe concise appelée **slicing** pour accéder aux sous-listes.</p>
+
+```{python}
+
+# Définition d'une liste
+maListe = list(range(5)) # range() est une fonction qui renvoie une liste d'entiers
+
+# Accès à une sous-liste en utilisant le slicing
+sousListe1 = maListe[1:3]  # Récupère les éléments de l'index 1 inclus jusqu'à l'index 3 non inclus
+sousListe2 = maListe[:3]   # Récupère les trois premiers éléments de la liste
+sousListe3 = maListe[2:]   # Récupère les éléments à partir de l'index 2 jusqu'à la fin de la liste
+sousListe4 = maListe[::2]  # Récupère les éléments avec un pas de 2
+
+# Affichage des sous-listes
+print("Sous-liste 1:", sousListe1)  # Résultat : [1, 2]
+print("Sous-liste 2:", sousListe2)  # Résultat : [0, 1, 2]
+print("Sous-liste 3:", sousListe3)  # Résultat : [2, 3, 4]
+print("Sous-liste 4:", sousListe4)  # Résultat : [0, 2, 4]
+
+# Exemples de mutations de listes :
+
+# Cas 1: source de même longueur
+nums1 = [1, 2, 3]
+nums1[1:] = [4, 5]  # Remplace la sous-liste à partir de l'index 1 par [4, 5]
+print(nums1)  # Résultat : [1, 4, 5]
+
+# Cas 2: source de longueur différente
+nums2 = nums1
+nums2[1:] = [6]  # Remplace la sous-liste à partir de l'index 1 par [6]
+print(nums2)  # Résultat : [1, 6]
+
+# Vérification si les deux listes pointent vers le même objet en mémoire
+isSameObject = id(nums1) == id(nums2)  # Vérifie si les listes pointent vers le même objet
+print(isSameObject)  # Renvoie True car les listes sont mutables, donc elles sont modifiées en place
+```
+
+##### Les méthodes de listes
+<p id=textIntro>Chaque méthode offre une fonctionnalité unique pour manipuler des listes, rendant ces structures de données
+extrêmement flexibles et puissantes pour une variété de tâches en programmation Python.</p>
+
+| **Méthode** | **Description** | **Exemple d'Utilisation** |
+| --- | --- | --- |
+| **append()** | Ajoute **un élément** à la fin de la liste. | liste.append(5) |
+| **extend()** | Étend la liste en ajoutant **tous les éléments d'une autre liste**. | liste.extend([6, 7]) |
+| **insert()** | Insère un élément à une position donnée. | liste.insert(1, 'a') |
+| **remove()** | Supprime la première occurrence d'un élément. | liste.remove('a') |
+| **pop()** | Supprime et renvoie un élément à une position donnée (par défaut, le dernier). | liste.pop() |
+| **clear()** | Supprime tous les éléments de la liste. | liste.clear() |
+| **index()** | Retourne l'indice du premier élément correspondant. | liste.index('a') |
+| **count()** | Compte le nombre d'occurrences d'un élément spécifique. | liste.count(5) |
+| **sort()** | Trie les éléments de la liste (dans un ordre spécifique). | liste.sort() |
+| **reverse()** | Inverse l'ordre des éléments de la liste. | liste.reverse() |
+
+```{python}
+# Création d'une liste de base
+maListe = [1, 2, 3]
+print(maListe)
+
+# Ajout d'un élément à la fin de la liste avec append()
+maListe.append("quatre")
+print("Après append(quatre):", maListe)
+
+# Extension de la liste en ajoutant les éléments d'une autre liste avec extend()
+maListe.extend([5, 6])
+print("Après extend([5, 6]):", maListe)
+
+# Insertion d'un élément à un index spécifique avec insert()
+maListe.insert(1, 'elephant')
+print("Après insert(1, 'elephant'):", maListe)
+
+# Suppression de la première occurrence d'un élément spécifié avec remove()
+maListe.remove('elephant')
+print("Après remove('elephant'):", maListe)
+
+# Suppression et retour de l'élément à la fin de la liste avec pop()
+elementSupprime = maListe.pop()
+print("Après pop():", maListe, ", Élément supprimé:", elementSupprime)
+
+# Suppression de tous les éléments de la liste avec clear()
+maListe.clear()
+print("Après clear():", maListe)
+
+# Recréation de la liste pour les autres méthodes
+maListe = [3, 1, 4, 2, 2]
+
+# Recherche de l'index de la première occurrence d'un élément spécifié avec index()
+indexDe4 = maListe.index(4)
+print("Index de 4:", indexDe4)
+
+# Comptage du nombre d'occurrences d'un élément spécifié avec count()
+compteDe2 = maListe.count(2)
+print("Nombre d'occurrences de 2:", compteDe2)
+
+# Tri des éléments de la liste dans l'ordre croissant avec sort()
+maListe.sort()
+print("Après sort():", maListe)
+
+# Inversion de l'ordre des éléments dans la liste avec reverse()
+maListe.reverse()
+print("Après reverse():", maListe)
+
+```
+
+##### Parcours de liste
+<p id=textIntro> Le parcours de liste consiste à accéder séquentiellement à chaque élément d'une liste. Cela peut être fait de différentes
+manières, mais les plus courantes sont les boucles **for** et **while** .</p>
+
+* Boucle for : : La boucle for est la méthode la plus couramment utilisée pour parcourir une liste. Elle permet de traiter chaque élément
+individuellement.
+
+* List Comprehension : La compréhension de liste est une méthode concise pour créer des listes. Elle permet de transformer une liste en
+une autre liste, en filtrant les éléments pour former une liste des résultats d'une expression donnée
+
+<p id=textIntro> La syntaxe de base d'une compréhension de liste est :
+**[**``nouvelle_expression`` **for ``item`` **in** ``iterable`` **if** ``condition``**]**
+<ul>
+<li><p id=textIntro>**nouvelle_expression** est l'expression qui définit comment **mapper** les éléments de l' iterable (par exemple, une liste).</p></li>
+<li><p id=textIntro>**item** est la variable qui prend la valeur de chaque élément de l' iterable pendant chaque itération.</p></li>
+<li><p id=textIntro> **condition** est une condition optionnelle pour filtrer les éléments de l' iterable. </p>
+</li>
+</ul>
+<p id=textIntro>Nous allons voir des exemples de parcours de liste en utilisant une boucle for puis en utilisant une **list comprehension** :</p>
+
+```{python}
+
+# récupérer tous les fruits avec un "a"
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+autreListe = []
+autreListe2 = []
+
+# Avec une boucle for
+for f in fruits:
+    if "a" in f:
+        autreListe.append(f)
+print(autreListe)
+
+# Avec une list comprehension
+autreListe2 = [f for f in fruits if "a" in f ]
+print(autreListe2)
+
+
+```
+
+<p id=textIntro>Nous pouvons voir que **les list comprehension** sont un moyen d'écrire un code plus concis mais toujours autant compréhensible ! Alors pourquoi se prendre la tête avec une boucle for ? 😎
+<br>
+Elles peuvent aussi être utilisées pour effectuer des calculs sur tous les éléments d'une liste. Voyons ça :</p>
+
+```{python}
+# Elevation des nombres d'une liste au carré
+nombres = [2, 5, 10, 111]
+nombreCarres = [x**2 for x in nombres]
+print(nombreCarres) # [4, 25, 100, 12321]
+
+# Filtrer les nombres pairs d'une liste
+carresPairs = [x for x in nombreCarres if x%2==0]
+print(carresPairs)
+
+# Appliquer une méthode à tous les éléments
+fruits_majuscule = [fruit.upper() for fruit in fruits]
+print(fruits_majuscule)
+
+```
+
+#### Les tuples
+
+<p id=textIntro>Les tuples sont des listes **non mutables**. Cela signifie que les éléments d'un tuple ne peuvent pas être modifiés après création. Les éléments sont séparés par dé virgules et sont entourés de parenthèses.</p>
+
+| **Avantage**                      | **Description**                                               |
+|------------------------------|-----------------------------------------------------------|
+| **Sécurité des Données**         | Parfait pour protéger les données contre les modifications. |
+| **Performance**                  | Plus rapides à parcourir que les listes.                 |
+| **Utilisation en tant que Clés de Dictionnaire** | Peuvent être utilisés comme clés dans les dictionnaires, contrairement aux listes. |
+| **Retour de Plusieurs Valeurs de Fonction** | Utilisés pour retourner plusieurs valeurs depuis une fonction. |
+| **Stockage de Données Constantes** | Idéaux pour stocker des données qui ne doivent pas être modifiées. |
+
+```{python}
+# Définition d'un tuple
+monTuple = (10, "b", 3.14)
+print(monTuple)
+
+unAutreTuple = 20, "c", 4.28
+print(unAutreTuple)
+
+elementIndex1 = monTuple[1]
+print(elementIndex1)
+
+# Tuple à Un Élément
+tupleSingleton = 50,
+print(tupleSingleton)
+
+# Tuple à Un Élément
+tupleSingleton = (50,)
+
+# Imbrication
+tupleImbrique = (10, (20, 30), (40, 50))
+
+# Méthodes Utiles
+longueur = len(monTuple)  # Retourne la longueur de monTuple, ici 3
+print(longueur)
+
+compteur = monTuple.count("b")  # Compte le nombre de fois que "b" apparaît dans monTuple, ici 1
+print(compteur)
+
+indice = monTuple.index("b")  # Trouve l'indice de "b" dans monTuple, ici 1
+print(indice)
+
+# L'affectation n'est pas possible
+# monTuple[1] = "c"
+
+```
+
+#### Les ensembles
+<p id=textIntro>Les ensembles sont :</p>
+
+* Des collections non ordonnées de **valeurs uniques**
+
+* **Mutables**, mais chaque élément doit être **unique**.
+
+* **Non-Ordonnés** : Les ensembles ne **maintiennent pas** l'ordre des éléments. On ne peut donc pas accéder aux éléments par un index.
+
+* Les éléments sont séparés par des virgules, et encadrés par des accolades
+
+##### Opérations sur les ensembles
+
+| **Opération**         | **Syntaxe**    | Description                                                                              |
+|-----------------------|---------------|------------------------------------------------------------------------------------------|
+| **Union**             | **a \| b**    | Retourne un nouvel ensemble contenant tous les éléments uniques des ensembles a et b.   |
+| **Intersection**      | **a & b**     | Retourne un nouvel ensemble contenant uniquement les éléments communs aux ensembles a et b. |
+| **Différence**        | **a - b**     | Retourne un nouvel ensemble contenant les éléments de a qui ne sont pas dans b.          |
+| **Différence Symétrique** | **a ^ b** | Retourne un nouvel ensemble contenant tous les éléments qui sont dans a ou b, mais pas dans les deux. |
+| **Ajout**             | **a.add(x)**  | Ajoute l'élément x à l'ensemble a.                                                     |
+| **Suppression**       | **a.remove(x)**| Supprime l'élément x de l'ensemble a ; **lève une erreur si x n'est pas présent**.           |
+| **Suppression (sans erreur)** | **a.discard(x)** | Supprime l'élément x de l'ensemble a si x est présent ; **ne fait rien sinon**.           |
+
+#### Les dictionnaires
+
+<p id=textIntro>Les dictionnaires sont un peu comme un format de JSON :</p>
+
+* Ils sont basés sur des paires **clés-valeurs**
+* On accède aux valeurs via les **clés**
+* Ils sont **mutables**, on peut y **ajouter** des éléments, en **supprimer** ou en **modifier**
+*   
+* Utilisation :
+- **Stockage d'Informations Structurées** : Parfait pour stocker des informations complexes comme des données utilisateur.
+- **Recherche Rapide** : Utilisez des dictionnaires pour des recherches rapides basées sur des clés uniques
+
+
+
+
+
+
+
