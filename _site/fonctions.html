@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -164,6 +198,87 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="quest-ce-quune-fonction">Qu’est ce qu’une fonction ?</h4>
 <p id="textIntro">
 Une <strong>fonction</strong> en programmation est essentiellement une série d’instructions regroupées sous un nom spécifique. Elle agit comme une petite “machine” qui peut recevoir des <strong>entrées</strong>, appelées <strong>paramètres</strong>, traiter ces données selon un ensemble d’instructions définies à l’intérieur de la fonction, et éventuellement produire un <strong>résultat</strong>, appelé <strong>valeur de retour</strong>.
+</p>
+</section>
+<section id="une-fonction-en-python" class="level4">
+<h4 class="anchored" data-anchor-id="une-fonction-en-python">Une fonction en Python</h4>
+<p id="textIntro">
+Une fonction est définie en utilisant le mot-clé <code>def</code>, suivi du nom de la fonction, des parenthèses () contenant des paramètres (si nécessaires), et un bloc d’instructions indenté.
+</p>
+<div id="dd960e64" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nom_de_la_fonction(parametres):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># instructions</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeur_de_retour</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="limportance-des-fonctions" class="level4">
+<h4 class="anchored" data-anchor-id="limportance-des-fonctions">L’importance des fonctions</h4>
+<p id="textIntro">
+Les fonctions jouent un rôle crucial dans la réduction de la redondance du code. Plutôt que de répéter le même code à plusieurs endroits, les fonctions nous permettent de regrouper ce code et de l’appeler selon les besoins. Cette approche rend le code plus concis, plus clair et plus simple à maintenir.
+</p>
+</section>
+<section id="pourquoi-utiliser-les-fonctions" class="level4">
+<h4 class="anchored" data-anchor-id="pourquoi-utiliser-les-fonctions">Pourquoi utiliser les fonctions ?</h4>
+<p id="textIntro">
+Les fonctions offrent plusieurs avantages essentiels :
+</p><ul>
+<li>
+<p id="textIntro">
+<strong>Simplification du code</strong> : En encapsulant des tâches complexes dans des fonctions, on simplifie le code principal, le rendant plus <strong>lisible</strong> et plus <strong>compréhensible</strong>.
+</p>
+</li>
+<li>
+<p id="textIntro">
+<strong>Réutilisabilité</strong> : Une fois une fonction définie, elle peut être utilisée <strong>autant de fois que nécessaire</strong> sans avoir à réécrire le même code, ce qui <strong>économise du temps</strong> et <strong>réduit les risques d’erreurs.</strong>
+</p>
+</li>
+<li>
+<p id="textIntro">
+<strong>Meilleure organisation du code</strong> : Les fonctions contribuent à <strong>structurer le code</strong> en unités logiques. Chaque fonction a un objectif spécifique, ce qui facilite la compréhension du programme dans son ensemble. De plus, cela <strong>simplifie le débogage</strong> et le <strong>test de parties spécifiques</strong> du code.
+</p>
+</li>
+</ul>
+<p></p>
+<div id="cc6862f1" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> maFonction():</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"C'est MA fonction"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p id="textIntro">
+Dans cet exemple <code>maFonction</code> est le nom de notre fonction, elle ne prend pas de paramètre. Les instructions que la fonction exécute permettent simplement d’afficher un message <strong>seulement quand on appelle la fonction</strong>.
+</p>
+</section>
+<section id="appel-dune-fonction" class="level4">
+<h4 class="anchored" data-anchor-id="appel-dune-fonction">Appel d’une fonction</h4>
+<p id="textIntro">
+Une fois la fonction définie, celle-ci peut être appelée en utilisant son nom suivi de parenthèses. Quand elle est appelée, les instructions qui la composent sont executés :
+</p>
+<div id="7ebd5920" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>maFonction()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>C'est MA fonction</code></pre>
+</div>
+</div>
+</section>
+<section id="paramètres-et-arguments" class="level4">
+<h4 class="anchored" data-anchor-id="paramètres-et-arguments">Paramètres et Arguments</h4>
+<p id="textIntro">
+Les fonctions peuvent être plus flexibles lorsqu’elles prennent des paramètres. Les paramètres agissent comme des variables dans la définition de la fonction.
+</p>
+<div id="94d7e1ed" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> maFonctionAvecParam(param1, param2):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(param1)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(param2)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bonjour(prenom):</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Bonjour </span><span class="sc">{</span>prenom<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>bonjour(<span class="st">"Pierre"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Bonjour Pierre</code></pre>
+</div>
+</div>
+<p id="textIntro">
+Dans l’exemple ci-dessus <code>prenom</code> est le <strong>paramètre</strong> de notre fonction <code>bonjour</code>. <strong>Quand la fonction est appelée</strong>, elle prend un <strong>argument</strong>, qui est une valeur qui est passée à la fonction lors de son appel. Ici, notre <strong>argument</strong> est <code>"Pierre"</code>.
 </p>
 
 

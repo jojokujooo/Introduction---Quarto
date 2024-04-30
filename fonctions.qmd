@@ -15,6 +15,7 @@ un bloc d'instructions indenté.</p>
 ```{python}
 def nom_de_la_fonction(parametres):
     # instructions
+    return valeur_de_retour
 ```
 
 #### L'importance des fonctions
@@ -23,9 +24,40 @@ def nom_de_la_fonction(parametres):
 #### Pourquoi utiliser les fonctions ?
 <p id=textIntro>Les fonctions offrent plusieurs avantages essentiels : 
 <ul>
-<li>**Simplification du code** : En encapsulant des tâches complexes dans des fonctions, on simplifie le code principal, le rendant plus **lisible** et plus **compréhensible**.</li>
-<li>**Réutilisabilité** : Une fois une fonction définie, elle peut être utilisée **autant de fois que nécessaire** sans avoir à réécrire le même code, ce qui **économise du temps** et **réduit les risques d'erreurs.**</li>
-<li>**Meilleure organisation du code** : Les fonctions contribuent à **structurer le code** en unités logiques. Chaque fonction a un objectif spécifique, ce qui facilite la compréhension du programme dans son ensemble. De plus, cela **simplifie le débogage** et le **test de parties spécifiques** du code.</li>
+<li><p id=textIntro>**Simplification du code** : En encapsulant des tâches complexes dans des fonctions, on simplifie le code principal, le rendant plus **lisible** et plus **compréhensible**.</p></li>
+<li><p id=textIntro>**Réutilisabilité** : Une fois une fonction définie, elle peut être utilisée **autant de fois que nécessaire** sans avoir à réécrire le même code, ce qui **économise du temps** et **réduit les risques d'erreurs.**</p></li>
+<li><p id=textIntro>**Meilleure organisation du code** : Les fonctions contribuent à **structurer le code** en unités logiques. Chaque fonction a un objectif spécifique, ce qui facilite la compréhension du programme dans son ensemble. De plus, cela **simplifie le débogage** et le **test de parties spécifiques** du code.</p></li>
 </ul>
-
 </p>
+
+```{python}
+def maFonction():
+    print("C'est MA fonction")
+```
+
+<p id=textIntro>Dans cet exemple `maFonction` est le nom de notre fonction, elle ne prend pas de paramètre. Les instructions que la fonction exécute permettent simplement d'afficher un message **seulement quand on appelle la fonction**.</p>
+
+#### Appel d'une fonction
+<p id=textIntro>Une fois la fonction définie, celle-ci peut être appelée en utilisant son nom suivi de parenthèses. Quand elle est appelée, les instructions qui la composent sont executés :</p>
+
+```{python}
+maFonction()
+```
+
+#### Paramètres et Arguments
+<p id=textIntro>Les fonctions peuvent être plus flexibles lorsqu'elles prennent des paramètres. Les paramètres agissent comme des variables dans la définition de la
+fonction.</p>
+
+```{python}
+def maFonctionAvecParam(param1, param2):
+    print(param1)
+    print(param2)
+
+def bonjour(prenom):
+    print(f"Bonjour {prenom}")
+
+bonjour("Pierre")
+```
+
+<p id=textIntro>Dans l'exemple ci-dessus `prenom` est le **paramètre** de notre fonction `bonjour`. **Quand la fonction est appelée**, elle prend un **argument**, qui est une valeur qui est passée à la fonction lors de son appel. Ici, notre **argument** est `"Pierre"`.</p>
+
