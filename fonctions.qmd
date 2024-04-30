@@ -4,3 +4,6 @@ title: Les Fonctions
 
 ### Les fonctions : Définition et rappels
 
+#### Qu'est ce qu'une fonction ?
+
+<p id=textIntro>Une **fonction** en programmation est essentiellement une série d'instructions regroupées sous un nom spécifique. Elle agit comme une petite "machine" qui peut recevoir des entrées, appelées **paramètres**, traiter ces données selon un ensemble d'instructions définies à l'intérieur de la fonction, et éventuellement produire un résultat, appelé **valeur de retour**.</p>

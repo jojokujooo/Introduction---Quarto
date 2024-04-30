@@ -165,3 +165,5 @@ while i < 10:
     print(i)
 
 ```
+
+<p id=textIntro>C'en est fini avec les structures de contrôle ! Prêt pour de nouveaux défis ?<a href=types_donnees.qmd>Cliquez-ici</a> pour passer à la suite.</p>
