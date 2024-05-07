@@ -1,0 +1,9 @@
+# A vous de jouer !
+<p id=textIntro>Vous avez révisé vos bases en Python ? Allons tester tout ca ! </p>
+
+<p id=textIntro>Je vous ai préparé des exercices sur chaque partie de mon cours pour que vous pussiez mettre en pratique les notions que l'on a vues ensemble 💪
+Choisissez le chapitre que vous souhaitez réviser ci-dessous :</p>
+
+<ul>
+    <li><a href="exo_variables.qmd">Variables et Opérations</a></li>
+</ul>

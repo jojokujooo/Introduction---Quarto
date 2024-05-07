@@ -10,13 +10,15 @@ website:
       - href: var_ope.qmd
         text: Variables et Opérations
       - href: comm_affiche.qmd
-        text: Commentaires et Affichage
+        text: Commentaires
       - href: struct_controle.qmd
         text: Structures de contrôle
       - href: types_donnees.qmd
         text: Types de données
       - href: fonctions.qmd
-        text: Les Fonctions
+        text: Fonctions
+      - href: exercices.qmd
+        text: Exercices
       - about.qmd
 
 
