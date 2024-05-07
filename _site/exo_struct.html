@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python Pour Les Nuls - Commentaires et Affichage</title>
+<title>Python Pour Les Nuls</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -131,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Variables et Opérations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./comm_affiche.html" aria-current="page"> 
+    <a class="nav-link" href="./comm_affiche.html"> 
 <span class="menu-text">Commentaires</span></a>
   </li>  
   <li class="nav-item">
@@ -166,116 +132,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#commentaires" id="toc-commentaires" class="nav-link active" data-scroll-target="#commentaires">Commentaires</a></li>
-  <li><a href="#affichage" id="toc-affichage" class="nav-link" data-scroll-target="#affichage">Affichage</a></li>
-  <li><a href="#formatage" id="toc-formatage" class="nav-link" data-scroll-target="#formatage">Formatage</a></li>
-  <li><a href="#calcul-et-arrondi" id="toc-calcul-et-arrondi" class="nav-link" data-scroll-target="#calcul-et-arrondi">Calcul et arrondi</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Commentaires et Affichage</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
+<iframe src="exercices/exos_struct.html" width="1000px" height="600px">
+</iframe>
 
 
-</header>
-
-
-<section id="commentaires" class="level3">
-<h3 class="anchored" data-anchor-id="commentaires">Commentaires</h3>
-<p id="textIntro">
-Les <strong>commentaires</strong> sont utilisés pour expliquer le code. Ils sont utiles pour vous mais surtout pour ceux qui vont lire votre code. Ils commencent par un <strong>#</strong> et prennent toute une ligne sauf s’ils suivent une instruction. <strong>A noter qu’ils ne sont pas comptabilisés quand on exécute du code</strong><br> <strong>Alors simplifiez la vie de votre prof et commentez votre code !</strong>
-</p>
-<div id="0fe271a2" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voici un commentaire</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>variableTest <span class="op">=</span> <span class="dv">2</span> <span class="co"># Voici un commentaire qui suit une ligne de code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="affichage" class="level3">
-<h3 class="anchored" data-anchor-id="affichage">Affichage</h3>
-<p id="textIntro">
-En Python, pour afficher du texte, le contenu d’une variable ou même les deux, on utilise la fonction <strong>print().</strong>
-</p>
-<div id="88f5bdbf" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mes élèves sont les meilleurs"</span>) <span class="co"># Affiche le texte entre les guillemets</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(variableTest) <span class="co"># Affiche la valeur de la variable</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Mes élèves sont les meilleurs"</span>, variableTest) <span class="co"># Affiche le texte entre les guillemets et la valeur de la variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Mes élèves sont les meilleurs
-2
-Mes élèves sont les meilleurs 2</code></pre>
-</div>
-</div>
-</section>
-<section id="formatage" class="level3">
-<h3 class="anchored" data-anchor-id="formatage">Formatage</h3>
-<p id="textIntro">
-Pour afficher du texte ainsi que des variables dans une même ligne il existe aussi une autre méthode que l’on appelle les <strong>f-strings</strong>. En utilisant les <strong>f-strings</strong>, vous pouvez insérer des variables directement dans une chaîne de caractères en plaçant leur nom <strong>entre des accolades {}</strong> à l’intérieur de la chaîne. Cela améliore grandement la lisibilité. Mais pour cela il faut placer un <strong>f</strong> DEVANT la chaîne de caractères. Voici un exemple :
-</p>
-<div id="97e8690f" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>prenom <span class="op">=</span> <span class="st">"Johann"</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="st">"22"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Je m'appelle </span><span class="sc">{</span>prenom<span class="sc">}</span><span class="ss"> et j'ai </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss"> ans"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Je m'appelle Johann et j'ai 22 ans</code></pre>
-</div>
-</div>
-<p id="textIntro">
-L’utilisation de la méthode <strong>.format()</strong> en Python permet aussi d’insérer des variables dans des chaînes de caractères en spécifiant des <strong>emplacements réservés</strong> (placeholders) avec des accolades {} , puis en utilisant la méthode <strong>.format()</strong> après la chaine de caractères pour remplacer ces emplacements par les valeurs des variables.
-</p>
-<div id="a13493d9" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de format()</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Bonjour, je m'appelle </span><span class="sc">{}</span><span class="st"> et j'ai </span><span class="sc">{}</span><span class="st"> ans."</span>.<span class="bu">format</span>(prenom, age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Bonjour, je m'appelle Johann et j'ai 22 ans.</code></pre>
-</div>
-</div>
-</section>
-<section id="calcul-et-arrondi" class="level3">
-<h3 class="anchored" data-anchor-id="calcul-et-arrondi">Calcul et arrondi</h3>
-<p id="textIntro">
-Dans votre vie de programmeur, vous effectuerez souvent des calculs. Mais leur résultat seront peut-être parfois trop précis, donc il faudra les arrondir ! Dans l’exemple suivant on va faire un calcul puis l’afficher une première fois sans l’arrondir puis un autre fois arrondi.
-</p>
-<div id="bddcf071" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcul</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>resultat <span class="op">=</span> <span class="dv">10</span> <span class="op">/</span> <span class="dv">3</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Affichage</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Le résultat pas arrondi est </span><span class="sc">{</span>resultat<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Arrondi à deux chiffres après la virgule</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Le résultat arrondi est : </span><span class="sc">{</span>resultat<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Le résultat pas arrondi est 3.3333333333333335
-Le résultat arrondi est : 3.33</code></pre>
-</div>
-</div>
-<p id="textIntro">
-Vous êtes maintenant un pro des commentaires et de l’affichage ! <a href="./struct_controle.html">Cliquez-ici</a> pour passer à la suite.
-</p>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DataCamp Light | Standalone example</title>
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.datacamp.com/assets/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+
+    [data-datacamp-exercise] {
+        visibility: hidden;
+      }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react-dev.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Exercice 1 : Condition</h2>
+    </div>
+
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+      <code data-type="pre-exercise-code"></code>
+      <code data-type="sample-code">
+        x = 12
+        
+        # Affichez à l'aide d'une condition : Si x est SUPERIEUR à 10 alors Affiche "Admis" sinon afficher "Refusé"
+
+      </code>
+
+      <code data-type="solution">
+        x = 12
+        
+        # Affichez à l'aide d'une condition : Si x est SUPERIEUR à 10 alors Affiche "Admis" sinon afficher "Refusé"
+        if x > 10:
+          print("Admis")
+        else:
+          print("Refusé")
+      </code>
+
+      <code data-type="sct">
+        test_object("x")
+        test_student_typed("if x > 10", not_typed_msg="Vous n'avez pas utilisé de condition SI")
+        test_output_contains("Admis", pattern=True, no_output_msg="Vous n'avez pas affiché le résultat")
+        success_msg("Vous avez réussi à faire une condition en Python !")
+      </code>
+
+      <div data-type="hint">Utilisez une condition if pour vérifier la valeur de x</div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="title">
+      <h2>Exercice 2 : Boucle </h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+      
+      <code data-type="pre-exercise-code"># no pec</code>
+
+      <code data-type="sample-code">
+        ma_liste = ["Ményssa", "aime", "les kebabs"]
+        # Ecrivez une boucle qui affiche chaque MOT de la liste ma_liste
+      </code>
+
+      <code data-type="solution">
+        ma_liste = ["Ményssa", "aime", "les kebabs"]
+        # Ecrivez une boucle qui affiche chaque MOT de la liste ma_liste
+        for mot in ma_liste:
+            print(mot)
+      </code>
+
+      <code data-type="sct">
+        test_object("ma_liste")
+        test_student_typed("for mot in ma_liste", not_typed_msg="Vous n'avez pas utilisé de boucle for")
+        test_output_contains("Ményssa", pattern=True, no_output_msg="Vous n'avez pas affiché le résultat")
+        success_msg("Vous avez réussi à faire une boucle For en Python !")
+      </code>
+      <div data-type="hint">
+        Utilisez une boucle for pour itérer sur la liste
+      </div>
+    </div>
+  </div>
+  
+  <div class="exercise">
+    <div class="title">
+      <h2>Exercice 3 : Tant que</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+      
+      <code data-type="pre-exercise-code"># no pec</code>
+
+      <code data-type="sample-code">
+        # Ecrivez un code qui tant que la variable i est inférieure à 10 le programme affiche i PUIS l'incrémente de 1
+
+        i = 0
+      </code>
+
+      <code data-type="solution">
+        # Ecrivez un code qui tant que la variable i est inférieure à 10 le programme affiche i PUIS l'incrémente de 1
+
+        i = 0
+        while i < 10:
+            print(i)
+            i += 1
+      </code>
+
+      <code data-type="sct">
+        test_object("i", incorrect_msg="Vérifiez votre condition")
+        test_student_typed("while i", not_typed_msg="Vous n'avez pas utilisé de boucle while")
+        test_output_contains("1", pattern=True, no_output_msg="Vous n'avez pas affiché le résultat")
+        success_msg("Vous avez réussi à faire une boucle while en Python !")
+      </code>
+      <div data-type="hint">
+        Pour faire une boucle Tant que il faut utiliser `while`
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

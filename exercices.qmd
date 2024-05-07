@@ -5,5 +5,6 @@
 Choisissez le chapitre que vous souhaitez réviser ci-dessous :</p>
 
 <ul>
-    <li><a href="exo_variables.qmd">Variables et Opérations</a></li>
+    <li><a href="exo_variables.qmd">Variables et Opérations / Commentaires et Affichage</a></li>
+    <li><a href="exo_struct.qmd">Structures de données</a></li>
 </ul>
