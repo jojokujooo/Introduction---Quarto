@@ -462,11 +462,3 @@ print(individu)
 ```
 
 <p id=textIntro>Vous êtes maintenant des pros des données séquentielles ! Pensez-vous que cela suffit ? Continuez de vous instruire en <a href=comm_affiche.qmd>cliquant ici</a> pour passer à la suite.</p>
-
-
-
-
-
-
-
-

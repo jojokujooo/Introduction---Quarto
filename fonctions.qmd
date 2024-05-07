@@ -119,7 +119,160 @@ perimetre_cercle(5)
 #### Différence entre Paramètres et Arguments 
 
 <ul>
-<li>**Paramètres** : Ce sont les noms des variables définis dans la déclaration de la fonction. Ces **paramètres** servent de **réceptacles** pour les valeurs qui seront passées à la fonction **lors de son appel**. Ils définissent les données que la fonction **s'attend à recevoir** pour effectuer ses opérations.</li>
+<li><p id=textIntro>**Paramètres** : Ce sont les noms des variables définis dans la déclaration de la fonction. Ces **paramètres** servent de **réceptacles** pour les valeurs qui seront passées à la fonction **lors de son appel**. Ils définissent les données que la fonction **s'attend à recevoir** pour effectuer ses opérations.</p></li>
 
-<li>**Arguments** : Ce sont les **valeurs réelles** fournies à la fonction **lors de son appel**. Ces valeurs correspondent aux paramètres définis dans la fonction. Lorsque la fonction est appelée, les **arguments sont assignés aux paramètres** correspondants selon leur position ou leur nom, et **la fonction les utilise** pour effectuer ses calculs ou exécuter ses instructions.</li>
+<li><p id=textIntro>**Arguments** : Ce sont les **valeurs réelles** fournies à la fonction **lors de son appel**. Ces valeurs correspondent aux paramètres définis dans la fonction. Lorsque la fonction est appelée, les **arguments sont assignés aux paramètres** correspondants selon leur position ou leur nom, et **la fonction les utilise** pour effectuer ses calculs ou exécuter ses instructions.</p></li>
 </ul>
+
+#### Valeurs Par Défaut des Paramètres
+<p id=textIntro>Les paramètres présents dans les fonctions peuvent avoir une **valeur par défaut**. Cela signifie que la fonction peut être appelée **sans** fournir d'arguments ou si les arguments passés **ne correspondent pas** aux valeurs attendues.</p>
+
+```{python}
+def uneFonctionQuelconque(parametre_1, 
+                          parametre_2 = 'kebab'): # On définit un paramètre par défaut
+    print(f"Mon premier paramètre est : {parametre_1} \
+         et mon deuxième paramètre est : {parametre_2}")
+
+uneFonctionQuelconque('pizza') # On appelle la fonction avec un argument
+
+```
+
+<p id=textIntro>Dans cet exemple la fonction `uneFonctionQuelconque()` est appelée avec seulement un argument donc la fonction utilise le **paramètre par défaut** `kebab`</p>
+
+<p id=textIntro>Cela permet donc d'écrire des fonctions plus flexible, et d'éviter des erreurs quand des arguments ne sont pas essentiels. Voici un autre exemple :</p>
+
+```{python}
+uneFonctionQuelconque('Un', 'kebab avec Ményssa')
+```
+
+### Les types de fonctions
+<p id=textIntro>En Python il y a deux types de fonctions, celles qui renvoient une valeur et celles qui n'en retournent pas :</p>
+
+<ul>
+<li><p id=textIntro>**Fonctions Avec Valeur de Retour** : Une fonction avec retour (`return`) renvoie ladite valeur là où la fonction est appelée. Il faut donc penser à assigner ce retour à une variable.<p></li>
+
+<li><p id=textIntro>**Fonctions Sans Valeur de Retour** : Une fonction qui ne revoie rien sert à effectuer des instructions comme afficher des messages.</p></li>
+</ul>
+
+```{python}
+def uneAutreFonction():
+    return 'Une valeur de retour' # On retourne une valeur
+
+variable_resultat = uneAutreFonction()
+print(variable_resultat) # On affiche la valeur retournée
+```
+
+<p id=textIntro>Il faut aussi savoir que des instructions peuvent être exécutées **dans le retour** d'une fonction. Une fonction avec une valeur de retour peut aussi afficher des messages sans imputer la valeur de retour. Nous allons voir ensemble des exemples :</p>
+
+```{python}
+def multiplier_par_deux(a, b=2):
+    print(f"Vous avez multiplié {a} par {b}") # On affiche un message
+    return a * b # On retourne la valeur de a * b
+
+resultat = multiplier_par_deux(3) # On appelle la fonction avec un argument
+print(resultat)
+
+def celius_en_farenheit(temperature_celsius):
+    return (temperature_celsius * 9/5) + 32
+
+temperature_farenheit = celius_en_farenheit(10)
+print(f"Votre température en Farenheit est {temperature_farenheit}°F")
+
+def valeur_minimum(a,b):
+    return min(a,b)
+
+resultat = valeur_minimum(4, 50)
+print(f'La valeur minimum est : {resultat}')
+
+```
+
+### La portée des variables
+<p id=textIntro>Les variables déclarées dans une fonction sont appelées des **variables locales** elles sont accessibles **seulement à l'intérieur** d'une fonction. Tandis qu'une variable déclarée en dehors d'une fonction ou autre est appelée **variable globale**. Un variable globale est utilisée pour partager des donner à plusieurs partie du programme.</p>
+
+```{python}
+p = 'Miam le kebab' # Ceci est une variable globale
+
+def une_fonction():
+    p = 'Miam le poulet' # Ceci est une variable locale
+    print(p)
+
+une_fonction()
+
+print(p)
+```
+
+<p id=textIntro>Cet exemple illustre ce principe, ci-dessus nous pouvons voir que nous avons deux variables `p`. La première est une variable **globale** et la seconde est une variable **locale**. La variable locale est utilisée dans la fonction et la variable globale est utilisée en dehors de la fonction. Il faut tout de même **faire attention** en utilisant les variables globales pour ne pas créer d'erreurs de conception.</p>
+
+<p id=textIntro>Il est possible de **modifier** une variable **globale** à l'intérieur d'une fonction en utilisant le mot-clé `global`.</p>
+
+```{python}
+
+a = 35
+
+def fonction_de_fou():
+    global a # On modifie la variable globale
+    a = 'Kebab'
+
+print(a) # On affiche la variable globale avant modification
+fonction_de_fou()
+print(a) # On affiche la variable globale après modification
+
+```
+
+### Nombre d'arguments variable
+<p id=textIntro>Il est possible de définir une fonction qui prend un nombre d'arguments **variable**. Pour cela il faut utiliser le mot-clé `*` devant un paramètre de type **liste** ou **tuple** quand on définit la fonction. A noter que pour les paramètres de type **dictionnaire** il faut utiliser `**`, ils sont pratiques car ils permettent de définir les clés d'arguments.</p>
+
+```{python}
+def somme(*nombres):
+    somme = 0
+    for nombre in nombres:
+        somme += nombre
+
+    return somme
+
+resultat = somme(10, 20, 30, 40)
+print(resultat)
+
+
+def fonction_avec_dictionnaire(**dict):
+    print(f"Mon prénom est {dict['prenom']}, mon repas préféré est le {dict['repas']}")
+
+fonction_avec_dictionnaire(prenom = 'Ményssa', repas = 'Kebab')
+
+```
+
+<p id=textIntro>On peut aussi accéder à ses arguments avec l'index du paramètre. **Attention**, il faut être sûrs de passer **assez d'arguments** à la fonction sinon il y aura une erreur ! Dans le cas inverse, les arguments "en trop" seront ignorés.</p>
+
+```{python}
+def les_parametres(*parametres):
+    print(f"Message : {parametres[2]}")
+    return parametres[0] + parametres[1]
+
+les_parametres(1,2, 'Je suis le troisième argument')
+
+```
+
+### Les fonctions anonymes (Lambda Functions)
+
+<p id=textIntro>Le mot-clé `lambda` sert à définir des **fonctions anonymes**, aussi appelées **fonctions lambda**.
+Les fonctions lambda ne sont pas définies avec un nom mais peuvent être utilisées dans des expressions ou des fonctions. Elles sont utilisées quand des fonctions simples doivent utilisée pour une tâche spécifique. Par exemple trier une liste de nombre ou appliquer une formule à toute une liste.</p>
+
+```{python}
+celsius_en_farenheit = lambda x: (x*9/5)+32
+
+celsius_en_farenheit(10)
+
+liste_nombres = range(1,10)
+
+# Eleve les nombres au carré
+nombres_carrés = [(lambda x: x*x)(nombre) for nombre in liste_nombres]
+print(nombres_carrés)
+
+nombres_pairs = list(filter(lambda x: x%2==0, liste_nombres))
+print(nombres_pairs)
+
+nombres_carres_map = map(lambda n:n*n, liste_nombres)
+print(list(nombres_carres_map))
+```
+
+<p id=textIntro>Comme vu ci-dessus, les fonctions **map** et **filter** peuvent être utilisée avec des fonctions lambdas. `map`permet d'appliquer une fonction à une variable **itérable** (liste, tuple, dictionnaire) et `filter` permet, comme son nom l'indique, de filtrer les éléments d'une liste selon une condition émise dans une fonction lambda.</p>

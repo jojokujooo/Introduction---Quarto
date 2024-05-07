@@ -167,6 +167,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#les-fonctions-définition-et-rappels" id="toc-les-fonctions-définition-et-rappels" class="nav-link active" data-scroll-target="#les-fonctions-définition-et-rappels">Les fonctions : Définition et rappels</a></li>
+  <li><a href="#les-types-de-fonctions" id="toc-les-types-de-fonctions" class="nav-link" data-scroll-target="#les-types-de-fonctions">Les types de fonctions</a></li>
+  <li><a href="#la-portée-des-variables" id="toc-la-portée-des-variables" class="nav-link" data-scroll-target="#la-portée-des-variables">La portée des variables</a></li>
+  <li><a href="#nombre-darguments-variable" id="toc-nombre-darguments-variable" class="nav-link" data-scroll-target="#nombre-darguments-variable">Nombre d’arguments variable</a></li>
+  <li><a href="#les-fonctions-anonymes-lambda-functions" id="toc-les-fonctions-anonymes-lambda-functions" class="nav-link" data-scroll-target="#les-fonctions-anonymes-lambda-functions">Les fonctions anonymes (Lambda Functions)</a></li>
   </ul>
 </nav>
     </div>
@@ -205,7 +209,7 @@ Une <strong>fonction</strong> en programmation est essentiellement une série d�
 <p id="textIntro">
 Une fonction est définie en utilisant le mot-clé <code>def</code>, suivi du nom de la fonction, des parenthèses () contenant des paramètres (si nécessaires), et un bloc d’instructions indenté.
 </p>
-<div id="dd261d8e" class="cell" data-execution_count="1">
+<div id="3a1549ad" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> nom_de_la_fonction(parametres):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># instructions</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> valeur_de_retour</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -239,7 +243,7 @@ Les fonctions offrent plusieurs avantages essentiels :
 </li>
 </ul>
 <p></p>
-<div id="bdfdcc7c" class="cell" data-execution_count="2">
+<div id="2d7790c4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> maFonction():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"C'est MA fonction"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -252,7 +256,7 @@ Dans cet exemple <code>maFonction</code> est le nom de notre fonction, elle ne p
 <p id="textIntro">
 Une fois la fonction définie, celle-ci peut être appelée en utilisant son nom suivi de parenthèses. Quand elle est appelée, les instructions qui la composent sont executés :
 </p>
-<div id="9673ba50" class="cell" data-execution_count="3">
+<div id="5e161c20" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>maFonction()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>C'est MA fonction</code></pre>
@@ -264,7 +268,7 @@ Une fois la fonction définie, celle-ci peut être appelée en utilisant son nom
 <p id="textIntro">
 Les fonctions peuvent être plus flexibles lorsqu’elles prennent des paramètres. Les paramètres agissent comme des variables dans la définition de la fonction.
 </p>
-<div id="d9bda486" class="cell" data-execution_count="4">
+<div id="8888618e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> maFonctionAvecParam(param1, param2):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(param1)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(param2)</span>
@@ -281,7 +285,7 @@ Les fonctions peuvent être plus flexibles lorsqu’elles prennent des paramètr
 </p><p>Dans l’exemple ci-dessus <code>prenom</code> est le <strong>paramètre</strong> de notre fonction <code>bonjour</code>. <strong>Quand la fonction est appelée</strong>, elle prend un <strong>argument</strong>, qui est une valeur qui est passée à la fonction lors de son appel. Ici, notre <strong>argument</strong> est <code>"Pierre"</code>. Dans cet appel, <code>"Pierre"</code> est un argument qui est passé à la fonction <code>bonjour</code> . La fonction utilisera la valeur de cet argument lors de son exécution.</p>
 Voici quelques exemples :
 <p></p>
-<div id="78886748" class="cell" data-execution_count="5">
+<div id="0632e976" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition de la fonction pour afficher un message</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> affiche_message(message):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Message reçu : </span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -348,15 +352,221 @@ Le périmètre d'un cercle de rayon 5 est 31.42</code></pre>
 <h4 class="anchored" data-anchor-id="différence-entre-paramètres-et-arguments">Différence entre Paramètres et Arguments</h4>
 <ul>
 <li>
+<p id="textIntro">
 <strong>Paramètres</strong> : Ce sont les noms des variables définis dans la déclaration de la fonction. Ces <strong>paramètres</strong> servent de <strong>réceptacles</strong> pour les valeurs qui seront passées à la fonction <strong>lors de son appel</strong>. Ils définissent les données que la fonction <strong>s’attend à recevoir</strong> pour effectuer ses opérations.
+</p>
 </li>
 <li>
+<p id="textIntro">
 <strong>Arguments</strong> : Ce sont les <strong>valeurs réelles</strong> fournies à la fonction <strong>lors de son appel</strong>. Ces valeurs correspondent aux paramètres définis dans la fonction. Lorsque la fonction est appelée, les <strong>arguments sont assignés aux paramètres</strong> correspondants selon leur position ou leur nom, et <strong>la fonction les utilise</strong> pour effectuer ses calculs ou exécuter ses instructions.
+</p>
 </li>
 </ul>
-
-
 </section>
+<section id="valeurs-par-défaut-des-paramètres" class="level4">
+<h4 class="anchored" data-anchor-id="valeurs-par-défaut-des-paramètres">Valeurs Par Défaut des Paramètres</h4>
+<p id="textIntro">
+Les paramètres présents dans les fonctions peuvent avoir une <strong>valeur par défaut</strong>. Cela signifie que la fonction peut être appelée <strong>sans</strong> fournir d’arguments ou si les arguments passés <strong>ne correspondent pas</strong> aux valeurs attendues.
+</p>
+<div id="956efc3c" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> uneFonctionQuelconque(parametre_1, </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                          parametre_2 <span class="op">=</span> <span class="st">'kebab'</span>): <span class="co"># On définit un paramètre par défaut</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Mon premier paramètre est : </span><span class="sc">{</span>parametre_1<span class="sc">}</span><span class="ss"> </span><span class="ch">\</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ss">         et mon deuxième paramètre est : </span><span class="sc">{</span>parametre_2<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>uneFonctionQuelconque(<span class="st">'pizza'</span>) <span class="co"># On appelle la fonction avec un argument</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mon premier paramètre est : pizza          et mon deuxième paramètre est : kebab</code></pre>
+</div>
+</div>
+<p id="textIntro">
+Dans cet exemple la fonction <code>uneFonctionQuelconque()</code> est appelée avec seulement un argument donc la fonction utilise le <strong>paramètre par défaut</strong> <code>kebab</code>
+</p>
+<p id="textIntro">
+Cela permet donc d’écrire des fonctions plus flexible, et d’éviter des erreurs quand des arguments ne sont pas essentiels. Voici un autre exemple :
+</p>
+<div id="8a41e392" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>uneFonctionQuelconque(<span class="st">'Un'</span>, <span class="st">'kebab avec Ményssa'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mon premier paramètre est : Un          et mon deuxième paramètre est : kebab avec Ményssa</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="les-types-de-fonctions" class="level3">
+<h3 class="anchored" data-anchor-id="les-types-de-fonctions">Les types de fonctions</h3>
+<p id="textIntro">
+En Python il y a deux types de fonctions, celles qui renvoient une valeur et celles qui n’en retournent pas :
+</p>
+<ul>
+<li>
+<p id="textIntro">
+<strong>Fonctions Avec Valeur de Retour</strong> : Une fonction avec retour (<code>return</code>) renvoie ladite valeur là où la fonction est appelée. Il faut donc penser à assigner ce retour à une variable.
+</p><p>
+</p></li>
+<li>
+<p id="textIntro">
+<strong>Fonctions Sans Valeur de Retour</strong> : Une fonction qui ne revoie rien sert à effectuer des instructions comme afficher des messages.
+</p>
+</li>
+</ul>
+<div id="133a75da" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> uneAutreFonction():</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">'Une valeur de retour'</span> <span class="co"># On retourne une valeur</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>variable_resultat <span class="op">=</span> uneAutreFonction()</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(variable_resultat) <span class="co"># On affiche la valeur retournée</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Une valeur de retour</code></pre>
+</div>
+</div>
+<p id="textIntro">
+Il faut aussi savoir que des instructions peuvent être exécutées <strong>dans le retour</strong> d’une fonction. Une fonction avec une valeur de retour peut aussi afficher des messages sans imputer la valeur de retour. Nous allons voir ensemble des exemples :
+</p>
+<div id="0bfec874" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiplier_par_deux(a, b<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Vous avez multiplié </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> par </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>) <span class="co"># On affiche un message</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b <span class="co"># On retourne la valeur de a * b</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>resultat <span class="op">=</span> multiplier_par_deux(<span class="dv">3</span>) <span class="co"># On appelle la fonction avec un argument</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultat)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> celius_en_farenheit(temperature_celsius):</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (temperature_celsius <span class="op">*</span> <span class="dv">9</span><span class="op">/</span><span class="dv">5</span>) <span class="op">+</span> <span class="dv">32</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>temperature_farenheit <span class="op">=</span> celius_en_farenheit(<span class="dv">10</span>)</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Votre température en Farenheit est </span><span class="sc">{</span>temperature_farenheit<span class="sc">}</span><span class="ss">°F"</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> valeur_minimum(a,b):</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">min</span>(a,b)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>resultat <span class="op">=</span> valeur_minimum(<span class="dv">4</span>, <span class="dv">50</span>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'La valeur minimum est : </span><span class="sc">{</span>resultat<span class="sc">}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Vous avez multiplié 3 par 2
+6
+Votre température en Farenheit est 50.0°F
+La valeur minimum est : 4</code></pre>
+</div>
+</div>
+</section>
+<section id="la-portée-des-variables" class="level3">
+<h3 class="anchored" data-anchor-id="la-portée-des-variables">La portée des variables</h3>
+<p id="textIntro">
+Les variables déclarées dans une fonction sont appelées des <strong>variables locales</strong> elles sont accessibles <strong>seulement à l’intérieur</strong> d’une fonction. Tandis qu’une variable déclarée en dehors d’une fonction ou autre est appelée <strong>variable globale</strong>. Un variable globale est utilisée pour partager des donner à plusieurs partie du programme.
+</p>
+<div id="ba66ff18" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="st">'Miam le kebab'</span> <span class="co"># Ceci est une variable globale</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> une_fonction():</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> <span class="st">'Miam le poulet'</span> <span class="co"># Ceci est une variable locale</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(p)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>une_fonction()</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Miam le poulet
+Miam le kebab</code></pre>
+</div>
+</div>
+<p id="textIntro">
+Cet exemple illustre ce principe, ci-dessus nous pouvons voir que nous avons deux variables <code>p</code>. La première est une variable <strong>globale</strong> et la seconde est une variable <strong>locale</strong>. La variable locale est utilisée dans la fonction et la variable globale est utilisée en dehors de la fonction. Il faut tout de même <strong>faire attention</strong> en utilisant les variables globales pour ne pas créer d’erreurs de conception.
+</p>
+<p id="textIntro">
+Il est possible de <strong>modifier</strong> une variable <strong>globale</strong> à l’intérieur d’une fonction en utilisant le mot-clé <code>global</code>.
+</p>
+<div id="15e7d70a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">35</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fonction_de_fou():</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> a <span class="co"># On modifie la variable globale</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="st">'Kebab'</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a) <span class="co"># On affiche la variable globale avant modification</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>fonction_de_fou()</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a) <span class="co"># On affiche la variable globale après modification</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>35
+Kebab</code></pre>
+</div>
+</div>
+</section>
+<section id="nombre-darguments-variable" class="level3">
+<h3 class="anchored" data-anchor-id="nombre-darguments-variable">Nombre d’arguments variable</h3>
+<p id="textIntro">
+Il est possible de définir une fonction qui prend un nombre d’arguments <strong>variable</strong>. Pour cela il faut utiliser le mot-clé <code>*</code> devant un paramètre de type <strong>liste</strong> ou <strong>tuple</strong> quand on définit la fonction. A noter que pour les paramètres de type <strong>dictionnaire</strong> il faut utiliser <code>**</code>, ils sont pratiques car ils permettent de définir les clés d’arguments.
+</p>
+<div id="3ad71c77" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> somme(<span class="op">*</span>nombres):</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    somme <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> nombre <span class="kw">in</span> nombres:</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        somme <span class="op">+=</span> nombre</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> somme</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>resultat <span class="op">=</span> somme(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(resultat)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fonction_avec_dictionnaire(<span class="op">**</span><span class="bu">dict</span>):</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Mon prénom est </span><span class="sc">{</span><span class="bu">dict</span>[<span class="st">'prenom'</span>]<span class="sc">}</span><span class="ss">, mon repas préféré est le </span><span class="sc">{</span><span class="bu">dict</span>[<span class="st">'repas'</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>fonction_avec_dictionnaire(prenom <span class="op">=</span> <span class="st">'Ményssa'</span>, repas <span class="op">=</span> <span class="st">'Kebab'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>100
+Mon prénom est Ményssa, mon repas préféré est le Kebab</code></pre>
+</div>
+</div>
+<p id="textIntro">
+On peut aussi accéder à ses arguments avec l’index du paramètre. <strong>Attention</strong>, il faut être sûrs de passer <strong>assez d’arguments</strong> à la fonction sinon il y aura une erreur ! Dans le cas inverse, les arguments “en trop” seront ignorés.
+</p>
+<div id="578b4099" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> les_parametres(<span class="op">*</span>parametres):</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Message : </span><span class="sc">{</span>parametres[<span class="dv">2</span>]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> parametres[<span class="dv">0</span>] <span class="op">+</span> parametres[<span class="dv">1</span>]</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>les_parametres(<span class="dv">1</span>,<span class="dv">2</span>, <span class="st">'Je suis le troisième argument'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Message : Je suis le troisième argument</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>3</code></pre>
+</div>
+</div>
+</section>
+<section id="les-fonctions-anonymes-lambda-functions" class="level3">
+<h3 class="anchored" data-anchor-id="les-fonctions-anonymes-lambda-functions">Les fonctions anonymes (Lambda Functions)</h3>
+<p id="textIntro">
+Le mot-clé <code>lambda</code> sert à définir des <strong>fonctions anonymes</strong>, aussi appelées <strong>fonctions lambda</strong>. Les fonctions lambda ne sont pas définies avec un nom mais peuvent être utilisées dans des expressions ou des fonctions. Elles sont utilisées quand des fonctions simples doivent utilisée pour une tâche spécifique. Par exemple trier une liste de nombre ou appliquer une formule à toute une liste.
+</p>
+<div id="473a08f7" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>celsius_en_farenheit <span class="op">=</span> <span class="kw">lambda</span> x: (x<span class="op">*</span><span class="dv">9</span><span class="op">/</span><span class="dv">5</span>)<span class="op">+</span><span class="dv">32</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>celsius_en_farenheit(<span class="dv">10</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>liste_nombres <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Eleve les nombres au carré</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>nombres_carrés <span class="op">=</span> [(<span class="kw">lambda</span> x: x<span class="op">*</span>x)(nombre) <span class="cf">for</span> nombre <span class="kw">in</span> liste_nombres]</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nombres_carrés)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>nombres_pairs <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x<span class="op">%</span><span class="dv">2</span><span class="op">==</span><span class="dv">0</span>, liste_nombres))</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nombres_pairs)</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>nombres_carres_map <span class="op">=</span> <span class="bu">map</span>(<span class="kw">lambda</span> n:n<span class="op">*</span>n, liste_nombres)</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(nombres_carres_map))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 4, 9, 16, 25, 36, 49, 64, 81]
+[2, 4, 6, 8]
+[1, 4, 9, 16, 25, 36, 49, 64, 81]</code></pre>
+</div>
+</div>
+<p id="textIntro">
+Comme vu ci-dessus, les fonctions <strong>map</strong> et <strong>filter</strong> peuvent être utilisée avec des fonctions lambdas. <code>map</code>permet d’appliquer une fonction à une variable <strong>itérable</strong> (liste, tuple, dictionnaire) et <code>filter</code> permet, comme son nom l’indique, de filtrer les éléments d’une liste selon une condition émise dans une fonction lambda.
+</p>
+
+
 </section>
 
 </main> <!-- /main -->
