@@ -42,36 +42,39 @@
       <div data-type="hint">Utilisez l'opérateur = pour assigner une valeur à une variable</div>
     </div>
   </div>
+
   <div class="exercise">
     <div class="title">
-      <h2>How it works</h2>
+      <h2>Exercice 2 : Addition</h2>
     </div>
-    <div data-datacamp-exercise data-lang="r" data-height="500">
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+      
       <code data-type="pre-exercise-code"># no pec</code>
+
       <code data-type="sample-code">
-        # Calculate 3 + 4
-        3 + 4
+        a = 5
+        b = 3
 
-        # Calculate 6 + 12
+        # Assignez la somme de a et b dans la variable somme
       </code>
-      <code data-type="solution">
-        # Calculate 3 + 4
-        3 + 4
 
-        # Calculate 6 + 12
-        6 + 12</code>
+      <code data-type="solution">
+        a = 5
+        b = 3
+        # Assignez la somme de a et b dans la variable somme
+        somme = a + b
+      </code>
+
       <code data-type="sct">
-        test_output_contains(&quot;18&quot;, incorrect_msg = &quot;Make sure to add `6 + 12`
-        on
-        a new line. Do not start the line with a `#`, otherwise your R code is not executed!&quot;)
-        success_msg(&quot;Awesome! See how the console shows the result of the R code you
-        submitted? Now that you&#39;re familiar with the interface, let&#39;s get down to R
-        business!&quot;)
+        test_object("a")
+        test_object("b")
+        test_object("somme",
+                    incorrect_msg = "Vous vous êtes trompé dans le calcul", 
+                    undefined_msg = "Vous n'avez pas bien nommé votre variable")
+        success_msg("Vous avez réussi à faire une addition !")
       </code>
       <div data-type="hint">
-        <p>Just add a line of R code that calculates the sum of 6 and 12, just like the
-          example
-          in the sample code!</p>
+        Utilisez l'opérateur + pour effectuer une addition
       </div>
     </div>
   </div>
