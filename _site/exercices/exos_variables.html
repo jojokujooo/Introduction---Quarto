@@ -19,23 +19,27 @@
 <body>
   <div class="exercise">
     <div class="title">
-      <h2>This is an python exercise with a plot</h2>
+      <h2>Exercice 1</h2>
     </div>
 
     <div data-datacamp-exercise data-lang="python" data-height="auto">
       <code data-type="pre-exercise-code"></code>
       <code data-type="sample-code">
-        import numpy as np
-        import matplotlib.pyplot as plt
+        # Créez une variable nommée a et assignez lui la valeur 5
 
-        x = np.arange(0, 5, 0.1);
-        y = np.sin(x)
-        plt.plot(x, y)
-        plt.show()
       </code>
-      <code data-type="solution"></code>
-      <code data-type="sct"></code>
-      <div data-type="hint">Just press 'Run'.</div>
+
+      <code data-type="solution">
+        a = 5
+      </code>
+
+      <code data-type="sct">
+        test_object("a", incorrect_msg = "Vous n'avez pas assigné la bonne valeur", undefined_msg = "Vous n'avez pas bien nommé votre variable")
+        success_msg("Bravo ! Vous avez correctement affecté 5 à la variable a.")
+
+      </code>
+
+      <div data-type="hint">Utilisez l'opérateur = pour assigner une valeur à une variable</div>
     </div>
   </div>
   <div class="exercise">
