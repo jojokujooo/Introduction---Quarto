@@ -276,3 +276,26 @@ print(list(nombres_carres_map))
 ```
 
 <p id=textIntro>Comme vu ci-dessus, les fonctions **map** et **filter** peuvent être utilisée avec des fonctions lambdas. `map`permet d'appliquer une fonction à une variable **itérable** (liste, tuple, dictionnaire) et `filter` permet, comme son nom l'indique, de filtrer les éléments d'une liste selon une condition émise dans une fonction lambda.</p>
+
+### Les fonctions et la récursivité
+<p id=textIntro>La **récursivité** est un principe essentiel en programmation. Cela consiste à définir une fonction qui s'appelle elle-même. Cela peut paraître étrange mais c'est une technique puissante pour résoudre certains problèmes, généralement quand on peut les décomposer en sous-problèmes. Voici des exemples : </p>
+
+```{python}
+import time
+def compte_a_rebours(temps):
+    if temps <= 0:
+        print("C'est l'heure du kebab !")
+    else:
+        print(temps)
+        time.sleep(1)
+        compte_a_rebours(temps-1)
+
+compte_a_rebours(5)
+```
+
+<p id=textIntro>Dans cet exemple, la fonction `compte_a_rebours` prend un nombre en paramètre. Si il est **inférieur ou égal** à 0 on affiche le message de fin du compte. Sinon on affiche le temps restant, on attend 1 seconde avec la fonction `time.sleep` et on appelle la fonction `compte_a_rebours` avec le temps en paramètre moins 1.</p>
+
+<p id=textIntro> **ATTENTION** Il faut utiliser la récursivité avec précaution car elle peut entraîner des fameuses erreurs de débordement de pile (Stack Overflow) qui ont donné leur nom au site.</p>
+
+### C'EST LA FIN
+<p id=textIntro>C'est la fin de mon cours sur les Fondamentaux de Python. J'espère que vous avez pu apprendre quelque chose ou rafraîchir des connaissances ! Vous pouvez maintenant aller vous entraîner dans la rubrique `Exercices` de mon site ou en cliquant <a href="">ici</a> ! Pour toutes questions demandez à <a href="https://www.linkedin.com/in/johanncazenave/">ChatGPT</a>. 
