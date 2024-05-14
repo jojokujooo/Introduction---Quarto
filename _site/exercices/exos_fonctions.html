@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DataCamp Light | Standalone example</title>
+  <link rel='shortcut icon' type='image/x-icon' href='https://www.datacamp.com/assets/favicon.ico'/>
+  <style>
+    .exercise {
+      margin: 50px;
+    }
+
+    [data-datacamp-exercise] {
+        visibility: hidden;
+      }
+  </style>
+
+  <script async src="https://cdn.datacamp.com/dcl-react-dev.js.gz"></script>
+</head>
+<body>
+  <div class="exercise">
+    <div class="title">
+      <h2>Exercice : Calcul de la moyenne</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+      
+      <code data-type="pre-exercise-code"># no pec</code>
+
+      <code data-type="sample-code">
+        def calculer_moyenne(liste_nombres):
+            # Écrivez votre code ici pour calculer la moyenne
+            return moyenne
+
+        # Testez votre fonction avec différentes listes de nombres
+        liste1 = [10, 20, 30, 40, 50]
+        liste2 = [5, 15, 25, 35, 45, 55, 65]
+      </code>
+
+      <code data-type="solution">
+        def calculer_moyenne(liste_nombres):
+            somme = sum(liste_nombres)
+            nombre_elements = len(liste_nombres)
+            moyenne = somme / nombre_elements
+            return moyenne
+
+        # Testez votre fonction avec différentes listes de nombres
+        liste1 = [10, 20, 30, 40, 50]
+        liste2 = [5, 15, 25, 35, 45, 55, 65]
+
+        # Appel de la fonction pour vérifier si elle fonctionne correctement
+        print(calculer_moyenne(liste1))
+        print(calculer_moyenne(liste2))
+      </code>
+
+      <code data-type="sct">
+        test_function("calculer_moyenne")
+        test_function("calculer_moyenne", args=[[10, 20, 30, 40, 50]], result=30)
+        test_function("calculer_moyenne", args=[[5, 15, 25, 35, 45, 55, 65]], result=35)
+        test_function("calculer_moyenne", args=[[1, 2, 3]], result=2)
+        test_function("calculer_moyenne", args=[[2, 4, 6, 8, 10]], result=6)
+        success_msg("Bravo ! Vous avez réussi à calculer la moyenne.")
+      </code>
+      <div data-type="hint">
+        Vous pouvez utiliser les fonctions `sum()` et `len()` pour calculer la somme et le nombre d'éléments dans une liste.
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="title">
+        <h2>Exercice : Calcul de l'aire d'un rectangle</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+      
+      <code data-type="pre-exercise-code"># no pec</code>
+
+      <code data-type="sample-code">
+        def calculer_aire_rectangle(longueur, largeur):
+            # Votre code ici
+            
+            return aire
+          
+        # Test de la fonction
+        longueur_rectangle = 5
+        largeur_rectangle = 3
+      </code>
+
+      <code data-type="solution">
+        def calculer_aire_rectangle(longueur, largeur):
+            # Votre code ici
+            aire = longueur * largeur
+            return aire
+        # Test de la fonction
+        longueur_rectangle = 5
+        largeur_rectangle = 3
+        print(calculer_aire_rectangle(longueur_rectangle, largeur_rectangle))
+      </code>
+
+      <code data-type="sct">
+        test_function("calculer_aire_rectangle")
+        success_msg("Bravo ! Vous avez réussi à faire une fonction qui calcule l'aire d'un rectangle.")
+      </code>
+      
+      <div data-type="hint">
+        L'aire d'un rectangle se calcule en multipliant sa longueur par sa largeur.
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="title">
+        <h2>Exercice : Conversion de température de Celsius en Fahrenheit</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+      
+        <code data-type="pre-exercise-code">#no pec</code>
+
+        <code data-type="sample-code">
+          # Écrivez une fonction nommée celsius_to_fahrenheit qui prend un argument temperature
+          # représentant la température en degrés Celsius et retourne cette température convertie en degrés Fahrenheit.
+
+          def celsius_to_fahrenheit(temperature):
+              # Votre code ici 
+
+              return fahrenheit
+
+          # Test de la fonction avec une température de 20 degrés Celsius
+          print(celsius_to_fahrenheit(20))
+      </code>
+
+        <code data-type="solution">
+          def celsius_to_fahrenheit(temperature):
+              fahrenheit = (9/5 * temperature) + 32
+              return fahrenheit
+          # Test de la fonction avec une température de 20 degrés Celsius
+          print(celsius_to_fahrenheit(20))
+
+        </code>
+
+        <code data-type="sct">
+          test_function("celsius_to_fahrenheit", args=[20], result=68.0, incorrect_msg="La conversion de 20 degrés Celsius en Fahrenheit est incorrecte.")
+          success_msg("Bravo ! Votre fonction de conversion de température fonctionne correctement !")
+        </code>
+        <div data-type="hint">
+            Vous pouvez utiliser la formule de conversion de température pour implémenter votre fonction.
+        </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="title">
+        <h2>Exercice : Carrés avec fonctions lambda</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+        <code data-type="pre-exercise-code"># Aucun code pré-exercice nécessaire</code>
+
+        <code data-type="sample-code">
+            # Liste d'entiers
+            entiers = [1, 2, 3, 4, 5]
+
+            # Utilisation d'une fonction lambda pour calculer les carrés des éléments
+            carres = # Ton code ici
+
+            # Affichage des carrés
+            print(carres)
+        </code>
+
+        <code data-type="solution">
+            # Liste d'entiers
+            entiers = [1, 2, 3, 4, 5]
+
+            # Utilisation d'une fonction lambda et la fonction map() pour calculer les carrés des éléments
+            carres = list(map(lambda x: x ** 2, entiers))
+
+            # Affichage des carrés
+            print(carres)
+        </code>
+
+        <code data-type="sct">
+            test_student_typed("list", not_typed_msg="Combinez les fonctions list et map pour votre fonction")
+            test_output_contains("[1, 4, 9, 16, 25]", no_output_msg="Vous n'avez pas affiché le résultat")
+            test_student_typed("lambda", not_typed_msg="Vous n'avez pas utilisé de fonction lambda")
+            success_msg("Bravo ! Vous avez correctement calculé les carrés des éléments de la liste.")
+        </code>
+        
+        <div data-type="hint">
+            lambda x: x**2
+        </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="title">
+        <h2>Exercice : Filtrage des nombres pairs avec une fonction lambda</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+        <code data-type="pre-exercise-code"># no pec</code>
+        <code data-type="sample-code">
+            # Liste de nombres
+            nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            
+            # Filtrer les nombres pairs (Insérez le code dans la fonction list)
+            nombres_pairs = list()
+            
+            # Afficher les nombres pairs
+            print(nombres_pairs)
+        </code>
+        <code data-type="solution">
+            # Liste de nombres
+            nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            
+            # Filtrer les nombres pairs
+            nombres_pairs = list(filter(lambda x: x % 2 == 0, nombres))
+            
+            # Afficher les nombres pairs
+            print(nombres_pairs)
+        </code>
+        <code data-type="sct">
+            test_student_typed("lambda", not_typed_msg="Vous n'avez pas utilisé de fonction lambda")
+            test_student_typed("filter",pattern=True, not_typed_msg="Vous devez utiliser la fonction filter pour filtrer.")
+            test_output_contains("[2, 4, 6, 8, 10]", pattern=True, no_output_msg="Vous n'avez pas affiché les nombres pairs correctement.")
+            success_msg("Filtrage des nombres pairs réussi !")
+        </code>
+        <div data-type="hint">
+            Utilisez la fonction `filter` avec une fonction lambda pour filtrer les nombres pairs.
+        </div>
+    </div>
+  </div>
+
+
+  <div class="exercise">
+    <div class="title">
+        <h2>Même exercice avec une compréhension de liste</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+        <code data-type="pre-exercise-code"># no pec</code>
+        <code data-type="sample-code">
+            # Liste de nombres
+            nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            
+            # Filtrer les nombres pairs avec une compréhension de liste
+            nombres_pairs = [x for x ...]
+            
+            # Afficher les nombres pairs
+            print(nombres_pairs)
+        </code>
+        <code data-type="solution">
+            # Liste de nombres
+            nombres = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            
+            # Filtrer les nombres pairs avec une compréhension de liste
+            nombres_pairs = [x for x in nombres if x % 2 == 0]
+            
+            # Afficher les nombres pairs
+            print(nombres_pairs)
+        </code>
+        <code data-type="sct">
+            test_student_typed("[x for x in nombres if]", not_typed_msg="Vous avez mal rédigé votre compréhension de liste")
+            test_output_contains("[2, 4, 6, 8, 10]", pattern=True, no_output_msg="Vous n'avez pas affiché les nombres pairs correctement.")
+            success_msg("Filtrage des nombres pairs avec une compréhension de liste réussi !")
+        </code>
+        <div data-type="hint">
+            Utilisez une compréhension de liste pour filtrer les nombres pairs.
+        </div>
+    </div>
+  </div>
+
+  <h3>Vous avez désormais révisé tous les chapitres !</h3>
+</body>
+</html>

@@ -119,5 +119,109 @@
     </div>
   </div>
 
+  <div class="exercise">
+    <div class="title">
+      <h1>Types de Données</h1>
+      <h2>Exercice 1 : Concaténation</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+      
+      <code data-type="pre-exercise-code"># no pec</code>
+
+      <code data-type="sample-code">
+        # Concaténez les deux chaines de caractères suivantes dans une variable chaine3 et afficher le résultat
+        chaine1 = "Bonjour"
+        chaine2 = " tout le monde"
+      </code>
+
+      <code data-type="solution">
+        # Concaténez les deux chaines de caractères suivantes dans une variable chaine3 et afficher le résultat
+        chaine1 = "Bonjour"
+        chaine2 = " tout le monde"
+        chaine3 = chaine1 + chaine2
+        print(chaine3)
+      </code>
+
+      <code data-type="sct">
+        test_object("chaine3", incorrect_msg="Il faut concaténer les chaines", undefined_msg="Vous avez mal nommé votre variable")
+        test_output_contains("Bonjour tout le monde", pattern=True, no_output_msg="Vous n'avez pas affiché le résultat")
+        success_msg("Vous avez réussi à concaténer deux chaines de caractères !")
+      </code>
+      <div data-type="hint">
+        Vous pouvez utiliser l'opérateur +
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="title">
+      <h2>Exercice 2 : Manipulation de listes</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+      
+      <code data-type="pre-exercise-code"># no pec</code>
+
+      <code data-type="sample-code">
+        # Triez les lettres dans l'ordre alphabétique dans la variable alphabetOrdre puis affichez la variable
+        alphabetDesordre = ['t', 'x', 'o', 'v', 'g', 's', 'z', 'n', 'h', 'c', 'k', 'r', 'p', 'a', 'l', 'e', 'b', 'm', 'i', 'j', 'y', 'd', 'q', 'w', 'u', 'f']
+        alphabetDesordre.
+      </code>
+
+      <code data-type="solution">
+        # Triez les lettres dans l'ordre alphabétique dans la variable alphabetOrdre puis affichez la variable
+        alphabetDesordre = ['t', 'x', 'o', 'v', 'g', 's', 'z', 'n', 'h', 'c', 'k', 'r', 'p', 'a', 'l', 'e', 'b', 'm', 'i', 'j', 'y', 'd', 'q', 'w', 'u', 'f']
+        alphabetDesordre.sort()
+        alphabetOrdre = alphabetDesordre
+        print(alphabetOrdre)
+      </code>
+
+      <code data-type="sct">
+        test_object("alphabetOrdre", incorrect_msg="Vous n'avez pas trié l'alphabet")
+        test_function("print")
+        test_output_contains("['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']", pattern=True, no_output_msg="Vous n'avez pas trié la variable")
+        success_msg("Vous avez réussi à trier une liste !")
+      </code>
+      <div data-type="hint">
+        Vous pouvez utiliser la méthode sort()
+      </div>
+    </div>
+  </div>
+
+  <div class="exercise">
+    <div class="title">
+      <h2>Exercice 3 : String dans des Listes</h2>
+    </div>
+    <div data-datacamp-exercise data-lang="python" data-height="auto">
+      
+      <code data-type="pre-exercise-code"># no pec</code>
+
+      <code data-type="sample-code">
+        # Liste de chaînes de caractères
+        chaines = ['vous', 'etes', 'les', 'meilleurs']
+        
+        # Afficher chaque chaine en majuscules à l'aide d'une boucle
+        
+      </code>
+
+      <code data-type="solution">
+        # Liste de chaînes de caractères
+        chaines = ['vous', 'etes', 'les', 'meilleurs']
+        
+        # Afficher chaque chaine en majuscules à l'aide d'une boucle
+
+        for mot in chaines:
+          print(mot.upper())
+      </code>
+
+      <code data-type="sct">
+        test_student_typed("for", not_typed_msg="Vous n'avez pas utilisé de boucle")
+        test_output_contains("VOUS", no_output_msg="Vous n'avez pas mis les chaines en majuscules")
+        success_msg("Vous avez réussi à altérer les chaines d'une liste !")
+      </code>
+      <div data-type="hint">
+        Vous pouvez utiliser la méthode upper()
+      </div>
+    </div>
+  </div>
 </body>
 </html>

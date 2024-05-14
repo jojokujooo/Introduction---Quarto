@@ -457,7 +457,9 @@ print(ville_supprimee)
 
 # Affichage du dictionnaire après les suppressions
 print(individu)
-
+# Suppression de toutes les clés et valeurs
+individu.clear()
+print(individu)
 
 ```
 

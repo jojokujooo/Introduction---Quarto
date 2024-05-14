@@ -1,0 +1,1 @@
+<iframe src="exercices/exos_typedonnees.html" width="1000px" height="600px"></iframe>
