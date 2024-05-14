@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python Pour Les Nuls - Structures de contrôle</title>
+<title>Python, Quésaco ? 🐍 - Structures de contrôle</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Python Pour Les Nuls</span>
+    <span class="navbar-title">Python, Quésaco ? 🐍</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -124,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Accueil</span></a>
+<span class="menu-text">Acceuil</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./var_ope.html"> 
@@ -310,7 +310,7 @@ Les opérateurs d’appartenance <strong>in</strong> et <strong>not in</strong> 
 </p><p>Les conditions en Python permettent d’exécuter certaines parties du code uniquement <strong>si une condition spécifique est remplie</strong>. Elles sont souvent utilisées pour <strong>prendre des décisions</strong> dans le code, en fonction de l’état ou de la valeur des variables.</p>
 En Python, les conditions sont généralement exprimées à l’aide de l’instruction <strong>if (Si)</strong>, qui est suivie d’une expression <strong>conditionnelle</strong>. Voici un exemple simple :
 <p></p>
-<div id="afd315ec" class="cell" data-execution_count="1">
+<div id="7727e1dd" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>a,b <span class="op">=</span> <span class="dv">5</span>,<span class="dv">3</span> <span class="co"># On initialise les variables a et b à 5 et 3</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&gt;</span> b: <span class="co"># Si a est supérieur à b alors on affiche le message</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"C'est vrai !"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -324,7 +324,7 @@ Dans cet exemple, la condition <strong>a &gt; b</strong> est évaluée. Si elle 
 <p id="textIntro">
 Il est possible de combiner <strong>plusieurs conditions</strong> en utilisant les opérateurs logiques et de comparaison
 </p>
-<div id="f4f96298" class="cell" data-execution_count="2">
+<div id="680c7115" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&lt;</span> b <span class="kw">or</span> b <span class="op">&lt;</span> <span class="dv">4</span>: <span class="co"># Si a est inférieur à b ou b est inférieur à 4 alors on affiche le message</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"C'est vrai !"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -334,7 +334,7 @@ Il est possible de combiner <strong>plusieurs conditions</strong> en utilisant l
 <p id="textIntro">
 En plus de l’instruction <strong>if (Si)</strong>, Python propose également d’autres instructions de contrôle de flux, telles que <strong>else (Sinon)</strong> et <strong>elif (abréviation de “else if” pour Sinon Si)</strong>, pour gérer différents scénarios. Voici un exemple utilisant else.
 </p>
-<div id="f65318d3" class="cell" data-execution_count="3">
+<div id="04af3661" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">10</span>: <span class="co"># Si x est supérieur à 10 alors on affiche le message suivant</span></span>
@@ -348,7 +348,7 @@ En plus de l’instruction <strong>if (Si)</strong>, Python propose également d
 <p id="textIntro">
 Voici un nouvel exemple qui utilise à la fois <strong>if, else et elif</strong>
 </p>
-<div id="5d1a6e47" class="cell" data-execution_count="4">
+<div id="9bc69620" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>a,b,c,d <span class="op">=</span> <span class="dv">20</span>,<span class="dv">18</span>,<span class="dv">7</span>,<span class="dv">10</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> a <span class="op">&gt;</span> b <span class="kw">and</span> c <span class="op">&gt;</span> d: <span class="co"># Si a est supérieur à b et c est supérieur à d alors on affiche le message</span></span>
@@ -375,7 +375,7 @@ La boucle <strong>for</strong> en Python est largement utilisée pour <strong>pa
 <ul>
 <li>Parcourir une chaine de caractères</li>
 </ul>
-<div id="97b2cc82" class="cell" data-execution_count="5">
+<div id="51386aab" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>chaine <span class="op">=</span> <span class="st">"Ményssa"</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lettre <span class="kw">in</span> chaine: <span class="co"># On parcourt la chaîne de caractère</span></span>
@@ -393,7 +393,7 @@ a</code></pre>
 <ul>
 <li>Parcourir une liste</li>
 </ul>
-<div id="2f812787" class="cell" data-execution_count="6">
+<div id="07d60a0f" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>maListe <span class="op">=</span> [<span class="st">"Janvier"</span>, <span class="st">"Février"</span>, <span class="st">"Mars"</span>, <span class="st">"Avril"</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> mois <span class="kw">in</span> maListe: <span class="co"># On parcourt la liste</span></span>
@@ -408,7 +408,7 @@ Avril</code></pre>
 <p id="textIntro">
 Mais les boucles ne sont pas simplement faites pour afficher le contenu d’une séquence elles peuvent être combinées à une condition :
 </p>
-<div id="fbc20ba3" class="cell" data-execution_count="7">
+<div id="659a3bc6" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>nombres <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">36</span>, <span class="dv">43</span>]</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nombre <span class="kw">in</span> nombres:</span>
@@ -431,7 +431,7 @@ Mais les boucles ne sont pas simplement faites pour afficher le contenu d’une 
 <p id="textIntro">
 La boucle <strong>while</strong> permet de répéter une partie de code <strong>tant qu’</strong>une condition est remplie. Comme son nom l’indique la boucle while ne s’arrête pas sauf si la condition est remplie, il faut donc être <strong>attentif</strong> et ne pas faire de boucle <strong>while</strong> infinie !! Nous allons voir un exemple :
 </p>
-<div id="8feb1acb" class="cell" data-execution_count="8">
+<div id="f3a11997" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> nombre <span class="op">&lt;=</span> <span class="dv">10</span>: <span class="co"># Tant que nombre est inférieur à 10</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(nombre)</span>
@@ -466,7 +466,7 @@ Certaines instructions permettent de modifier le comportement de l’exécution 
 </ul>
 Voici quelques exemples :
 <p></p>
-<div id="04bfd8ea" class="cell" data-execution_count="9">
+<div id="10d76ab5" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boucle while avec break</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
@@ -484,7 +484,7 @@ Voici quelques exemples :
 Sortie de la boucle car i = 3</code></pre>
 </div>
 </div>
-<div id="9568a1a5" class="cell" data-execution_count="10">
+<div id="7324d740" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boucle while avec continue</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> i <span class="op">&lt;</span> <span class="dv">10</span>:</span>
@@ -594,7 +594,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/jojokujooo\.github\.io\/Les-Fondamentaux-de-Python\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
