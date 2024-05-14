@@ -124,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Accueil</span></a>
+<span class="menu-text">Acceuil</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./var_ope.html"> 
@@ -206,7 +206,7 @@ Chaque type de données séquentielles offre des caractéristiques distinctes et
 <p id="textIntro">
 Les <strong>chaînes de caractères (str)</strong> sont utilisées pour stocker et manipuler du texte. Elles peuvent être définies en encadrant le texte entre des guillemets <strong>simples</strong> (‘…’), <strong>doubles</strong> (“…”), ou <strong>triples</strong> (’’‘…’’’ ou “““…”““) pour les chaînes multilignes. <br> Les chaînes sont des séquences de caractères <strong>indexées à partir de 0</strong> et peuvent contenir des caractères spéciaux, comme des guillemets, grâce aux caractères d’échappement (). Les chaînes de caractères offrent une gamme complète de méthodes pour le traitement de texte, les rendant extrêmement polyvalentes et <strong>indispensables</strong> pour une variété d’applications, de manipulations de base à des opérations plus complexes. Voici quelques exemples :
 </p>
-<div id="d90fe4e6" class="cell" data-execution_count="1">
+<div id="14fb74f0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemples de chaines de caractères</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Chaine de caractères simple</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>maChaine <span class="op">=</span> <span class="st">'Python est un langage de programmation'</span></span>
@@ -235,7 +235,7 @@ Python c'est trop bien</code></pre>
 <p id="textIntro">
 Les méthodes sont des fonctions associées à des objets spécifiques, leur permettant d’exécuter des actions sur ces objets ou de manipuler leurs données internes. Contrairement aux fonctions indépendantes, les méthodes sont liées à des objets particuliers. <br> Par exemple, les méthodes des <strong>chaînes de caractères (str)</strong> sont conçues pour <strong>opérer sur des chaînes de caractères spécifiques</strong>. Elles sont appelées en utilisant la notation pointée, comme <strong>objet.methode()</strong>. Les méthodes de chaînes de caractères incluent des fonctionnalités telles que <strong>upper()</strong>, <strong>lower()</strong>, et <strong>replace()</strong>, permettant de convertir en majuscules, en minuscules ou de remplacer des parties spécifiques de la chaîne. Pour appeler une méthode, utilisez généralement la syntaxe objet.methode(arguments). <br> Pour utiliser ces méthodes vous pouvez les utiliser sur des variables contenant une chaine de caractères ou sur des chaines de caractères directement.
 </p>
-<div id="a8f76a95" class="cell" data-execution_count="2">
+<div id="38a28c83" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Méthodes pour les chaînes de caractères</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># isupper() et islower()</span></span>
@@ -304,7 +304,7 @@ True</code></pre>
 <p id="textIntro">
 Les listes représentent des <strong>structures de données</strong> permettant de stocker une <strong>séquence d’éléments</strong>. Elles offrent une grande souplesse, car elles peuvent contenir des éléments de types variés et sont modifiables. En tant que collections ordonnées, les éléments sont organisés de manière <strong>séquentielle</strong>, séparés par des virgules et enveloppés entre crochets pour les chaines de caractères. Pour créer une liste, il suffit d’encadrer une série d’éléments avec des crochets, séparés par des virgules, par exemple : [“Bonjour”, “Au revoir”, 75]. L’accès aux éléments se fait en utilisant leur index, en commençant par 0. Étant donné que les listes sont <strong>mutables</strong>, il est possible de modifier leurs éléments <strong>après leur création</strong>.
 </p>
-<div id="14531c5d" class="cell" data-execution_count="3">
+<div id="b0a6db56" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition d'une liste</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>maListe <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(maListe)</span>
@@ -338,7 +338,7 @@ Les listes représentent des <strong>structures de données</strong> permettant 
 <p id="textIntro">
 En plus de permettre l’accès aux éléments d’une liste un par un, Python propose une syntaxe concise appelée <strong>slicing</strong> pour accéder aux sous-listes.
 </p>
-<div id="1fd6440f" class="cell" data-execution_count="4">
+<div id="4314a36a" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition d'une liste</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>maListe <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">5</span>)) <span class="co"># range() est une fonction qui renvoie une liste d'entiers</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -451,7 +451,7 @@ Chaque méthode offre une fonctionnalité unique pour manipuler des listes, rend
 </tr>
 </tbody>
 </table>
-<div id="4c196b21" class="cell" data-execution_count="5">
+<div id="1224fb0f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d'une liste de base</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>maListe <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(maListe)</span>
@@ -544,7 +544,7 @@ La syntaxe de base d’une compréhension de liste est : <strong>[<strong><code>
 <p id="textIntro">
 Nous allons voir des exemples de parcours de liste en utilisant une boucle for puis en utilisant une <strong>list comprehension</strong> :
 </p>
-<div id="3baff479" class="cell" data-execution_count="6">
+<div id="5f67e5fc" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># récupérer tous les fruits avec un "a"</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"kiwi"</span>, <span class="st">"mango"</span>]</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>autreListe <span class="op">=</span> []</span>
@@ -567,7 +567,7 @@ Nous allons voir des exemples de parcours de liste en utilisant une boucle for p
 <p id="textIntro">
 Nous pouvons voir que <strong>les list comprehension</strong> sont un moyen d’écrire un code plus concis mais toujours autant compréhensible ! Alors pourquoi se prendre la tête avec une boucle for ? 😎 <br> Elles peuvent aussi être utilisées pour effectuer des calculs sur tous les éléments d’une liste. Voyons ça :
 </p>
-<div id="592dcbef" class="cell" data-execution_count="7">
+<div id="233eb7ac" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Elevation des nombres d'une liste au carré</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>nombres <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">111</span>]</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>nombreCarres <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> nombres]</span>
@@ -627,7 +627,7 @@ Les tuples sont des listes <strong>non mutables</strong>. Cela signifie que les 
 </tr>
 </tbody>
 </table>
-<div id="0a22b564" class="cell" data-execution_count="8">
+<div id="e7f61989" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Définition d'un tuple</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>monTuple <span class="op">=</span> (<span class="dv">10</span>, <span class="st">"b"</span>, <span class="fl">3.14</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(monTuple)</span>
@@ -808,7 +808,7 @@ Il existe des méthodes liées aux variables de type dictionnaire pour les manie
 </tr>
 </tbody>
 </table>
-<div id="d7bed904" class="cell" data-execution_count="9">
+<div id="6c740f37" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d'un dictionnaire</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>individu <span class="op">=</span> {<span class="st">"nom"</span>: <span class="st">"Alice"</span>, <span class="st">"age"</span>: <span class="dv">30</span>}</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>autre_dictionnaire <span class="op">=</span> <span class="bu">dict</span>(nom<span class="op">=</span><span class="st">"Bob"</span>, age<span class="op">=</span><span class="dv">25</span>)</span>
